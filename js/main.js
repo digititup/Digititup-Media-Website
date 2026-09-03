@@ -610,28 +610,31 @@ function initInteractive3DHeroPhone() {
 
   if (!stage || !anchor) return;
 
-  // 3D Parallax on Mouse Move
+  // 3D Parallax on Mouse Move (only on devices with hover capability)
+  const isTouch = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
   let mouseX = 0, mouseY = 0;
   let currentX = 0, currentY = 0;
   let isHovering = false;
 
-  stage.addEventListener('mousemove', (e) => {
-    isHovering = true;
-    const rect = stage.getBoundingClientRect();
-    // Normalize coordinates from -1 to 1
-    mouseX = ((e.clientX - rect.left) / rect.width) * 2 - 1;
-    mouseY = ((e.clientY - rect.top) / rect.height) * 2 - 1;
-  });
+  if (!isTouch) {
+    stage.addEventListener('mousemove', (e) => {
+      isHovering = true;
+      const rect = stage.getBoundingClientRect();
+      // Normalize coordinates from -1 to 1
+      mouseX = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+      mouseY = ((e.clientY - rect.top) / rect.height) * 2 - 1;
+    });
 
-  stage.addEventListener('mouseenter', () => {
-    isHovering = true;
-  });
+    stage.addEventListener('mouseenter', () => {
+      isHovering = true;
+    });
 
-  stage.addEventListener('mouseleave', () => {
-    isHovering = false;
-    mouseX = 0;
-    mouseY = 0;
-  });
+    stage.addEventListener('mouseleave', () => {
+      isHovering = false;
+      mouseX = 0;
+      mouseY = 0;
+    });
+  }
 
   // Smooth animation loop using lerp for ultra-satisfying inertia
   function render3D() {
