@@ -1,11 +1,12 @@
 /* ============================================================================
    Digititup Media — media.digititup.com
    Sister Company of Digititup Agency Pvt Ltd (digititup.com)
-   Main Interactive Logic
+   Main Interactive Logic & VIP Features
    ============================================================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
+  initInteractive3DHeroPhone();
   initReelsShowcase();
   initPricingToggle();
   initContactForm();
@@ -23,7 +24,7 @@ const REELS_DATA = [
     likes: '85.4K',
     tag: 'Brand Viral',
     poster: 'assets/images/card_mountain_dew.png',
-    youtubeId: null, // Custom visual reel
+    youtubeId: null,
     desc: 'High-energy Reels campaign integrating unique QR code-driven participation for the Yamaha FZ-F1 giveaway across Nepal. Generated record-breaking digital engagement.',
     metrics: { reach: '1.8M Reach', engagement: '14.2% Rate' }
   },
@@ -177,9 +178,9 @@ function initNavbar() {
   const header = document.querySelector('.site-header');
   const burgerBtn = document.querySelector('.burger-btn');
   const drawer = document.querySelector('.mobile-drawer');
-  const navLinks = document.querySelectorAll('.nav-links a, .mobile-links a');
+  const drawerCloseBtn = document.getElementById('mobileDrawerClose');
+  const navLinks = document.querySelectorAll('.nav-links a, .mobile-nav-item, .mobile-links a');
 
-  // Sticky navbar with blur on scroll
   window.addEventListener('scroll', () => {
     if (window.scrollY > 40) {
       header.classList.add('scrolled');
@@ -188,28 +189,49 @@ function initNavbar() {
     }
   });
 
-  // Mobile menu toggle
+  function openDrawer() {
+    if (!drawer) return;
+    burgerBtn?.classList.add('open');
+    drawer.classList.add('active');
+    drawer.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeDrawer() {
+    if (!drawer) return;
+    burgerBtn?.classList.remove('open');
+    drawer.classList.remove('active');
+    drawer.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
   if (burgerBtn && drawer) {
     burgerBtn.addEventListener('click', () => {
-      burgerBtn.classList.toggle('open');
-      drawer.classList.toggle('active');
-      document.body.style.overflow = drawer.classList.contains('active') ? 'hidden' : '';
+      const isOpen = drawer.classList.contains('active');
+      if (isOpen) closeDrawer();
+      else openDrawer();
     });
 
-    // Close on link click
+    if (drawerCloseBtn) {
+      drawerCloseBtn.addEventListener('click', closeDrawer);
+    }
+
     navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        burgerBtn.classList.remove('open');
-        drawer.classList.remove('active');
-        document.body.style.overflow = '';
-      });
+      link.addEventListener('click', closeDrawer);
+    });
+
+    // Close on ESC
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && drawer.classList.contains('active')) {
+        closeDrawer();
+      }
     });
   }
 
-  // Active link indicator
+  // Highlight active section on scroll
   const sections = document.querySelectorAll('section[id]');
   window.addEventListener('scroll', () => {
-    const scrollY = window.pageYOffset + 120;
+    const scrollY = window.pageYOffset + 140;
     sections.forEach(current => {
       const sectionHeight = current.offsetHeight;
       const sectionTop = current.offsetTop;
@@ -237,7 +259,6 @@ function initReelsShowcase() {
 
   if (!track) return;
 
-  // Render cards
   function renderReels(category = 'all') {
     track.innerHTML = '';
     const filtered = category === 'all' 
@@ -280,20 +301,16 @@ function initReelsShowcase() {
     });
   }
 
-  // Initial render
   renderReels('all');
 
-  // Filter Buttons
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      const cat = btn.dataset.filter;
-      renderReels(cat);
+      renderReels(btn.dataset.filter);
     });
   });
 
-  // Horizontal Scroll Arrows
   if (prevBtn && nextBtn) {
     prevBtn.addEventListener('click', () => {
       track.scrollBy({ left: -320, behavior: 'smooth' });
@@ -321,7 +338,6 @@ function initReelsShowcase() {
     track.scrollLeft = scrollLeft - walk;
   });
 
-  // Modal Functions
   function openReelModal(reel) {
     const videoBox = document.getElementById('modalVideoBox');
     const titleEl = document.getElementById('modalTitle');
@@ -337,18 +353,15 @@ function initReelsShowcase() {
     tagEl.textContent = `${reel.client} · ${reel.tag}`;
     descEl.textContent = reel.desc;
 
-    // Metrics
     const keys = Object.keys(reel.metrics);
     metricVal1.textContent = reel.metrics[keys[0]] || reel.views;
     metricLbl1.textContent = keys[0] || 'Views';
     metricVal2.textContent = reel.metrics[keys[1]] || reel.likes;
     metricLbl2.textContent = keys[1] || 'Likes';
 
-    // WhatsApp Order Button
     const waText = encodeURIComponent(`Hi Digititup Media! I saw your reel for "${reel.client}" (${reel.title}). I would love to produce a similar high-retention vertical video for my brand!`);
     orderBtn.href = `https://wa.me/9779812414094?text=${waText}`;
 
-    // Video source
     if (reel.youtubeId) {
       videoBox.innerHTML = `
         <iframe 
@@ -400,58 +413,111 @@ function initReelsShowcase() {
   });
 }
 
-/* ================= PRICING TOGGLE ================= */
+/* ================= PRICING TOGGLE (MONTHLY VS ANNUALLY 20% OFF) ================= */
 function initPricingToggle() {
   const switchBtn = document.getElementById('pricingSwitch');
   const labelMonthly = document.getElementById('lblMonthly');
-  const labelProject = document.getElementById('lblProject');
-  const monthlyGrid = document.getElementById('pricingMonthlyGrid');
-  const projectGrid = document.getElementById('pricingProjectGrid');
+  const labelAnnually = document.getElementById('lblAnnually');
 
-  if (!switchBtn || !monthlyGrid || !projectGrid) return;
+  const starterPrice = document.getElementById('priceStarter');
+  const flowPrice = document.getElementById('priceFlow');
+  const starterPeriod = document.getElementById('periodStarter');
+  const flowPeriod = document.getElementById('periodFlow');
 
-  let isProject = false;
+  const starterDiscount = document.getElementById('discountStarter');
+  const flowDiscount = document.getElementById('discountFlow');
 
-  function updatePricingView() {
-    if (isProject) {
+  const btnStarter = document.getElementById('btnStarter');
+  const btnFlow = document.getElementById('btnFlow');
+  const btnViral = document.getElementById('btnViral');
+
+  if (!switchBtn || !starterPrice || !flowPrice) return;
+
+  let isAnnually = false;
+
+  function updatePricing() {
+    if (isAnnually) {
       switchBtn.classList.add('checked');
       labelMonthly.classList.remove('active');
-      labelProject.classList.add('active');
-      monthlyGrid.style.display = 'none';
-      projectGrid.style.display = 'grid';
+      labelAnnually.classList.add('active');
+
+      // 20% OFF discounted rates
+      starterPrice.innerHTML = '<span style="text-decoration:line-through;color:var(--ink-muted);font-size:24px;margin-right:6px;">25,000</span>20,000';
+      flowPrice.innerHTML = '<span style="text-decoration:line-through;color:var(--ink-muted);font-size:24px;margin-right:6px;">50,000</span>40,000';
+
+      starterPeriod.textContent = '/ month (contracted)';
+      flowPeriod.textContent = '/ month (contracted)';
+
+      if (starterDiscount) {
+        starterDiscount.style.display = 'inline-block';
+        starterDiscount.textContent = '⚡ Save NPR 60,000/yr (20% OFF Contracted, Billed Monthly)';
+      }
+      if (flowDiscount) {
+        flowDiscount.style.display = 'inline-block';
+        flowDiscount.textContent = '⚡ Save NPR 1,20,000/yr (20% OFF Contracted, Billed Monthly)';
+      }
+
+      // Pre-filled WhatsApp URLs
+      if (btnStarter) {
+        const msg = encodeURIComponent('Hi Digititup Media! I would like to lock in the Starter Annual Contract (20% OFF - NPR 20,000/mo, billed monthly) for 1 short video/week. Please guide me through onboarding!');
+        btnStarter.href = `https://wa.me/9779812414094?text=${msg}`;
+      }
+      if (btnFlow) {
+        const msg = encodeURIComponent('Hi Digititup Media! I want to lock in the Flow Annual Contract (20% OFF - NPR 40,000/mo, billed monthly) for 2-3 short videos/week. Let\'s schedule onboarding!');
+        btnFlow.href = `https://wa.me/9779812414094?text=${msg}`;
+      }
+      if (btnViral) {
+        const msg = encodeURIComponent('Hi Digititup Media! We want to discuss an Annual Enterprise Retainer with the 20% contract discount for high-volume custom production & shoots.');
+        btnViral.href = `https://wa.me/9779812414094?text=${msg}`;
+      }
+
     } else {
       switchBtn.classList.remove('checked');
       labelMonthly.classList.add('active');
-      labelProject.classList.remove('active');
-      monthlyGrid.style.display = 'grid';
-      projectGrid.style.display = 'none';
+      labelAnnually.classList.remove('active');
+
+      // Regular Monthly rates
+      starterPrice.textContent = '25,000';
+      flowPrice.textContent = '50,000';
+
+      starterPeriod.textContent = '/ month';
+      flowPeriod.textContent = '/ month';
+
+      if (starterDiscount) starterDiscount.style.display = 'none';
+      if (flowDiscount) flowDiscount.style.display = 'none';
+
+      // Pre-filled WhatsApp URLs
+      if (btnStarter) {
+        const msg = encodeURIComponent('Hi Digititup Media! I would like to subscribe to the Starter Monthly Plan (NPR 25,000/mo) for 1 short video/week. Please guide me through onboarding.');
+        btnStarter.href = `https://wa.me/9779812414094?text=${msg}`;
+      }
+      if (btnFlow) {
+        const msg = encodeURIComponent('Hi Digititup Media! I want to get started with the Flow Monthly Plan (NPR 50,000/mo) for 2-3 short videos/week. Let\'s discuss our brand goals.');
+        btnFlow.href = `https://wa.me/9779812414094?text=${msg}`;
+      }
+      if (btnViral) {
+        const msg = encodeURIComponent('Hi Digititup Media! We need high-volume, custom viral reels production and on-location shoot direction. I\'d like to book a strategy meeting.');
+        btnViral.href = `https://wa.me/9779812414094?text=${msg}`;
+      }
     }
   }
 
   switchBtn.addEventListener('click', () => {
-    isProject = !isProject;
-    updatePricingView();
+    isAnnually = !isAnnually;
+    updatePricing();
   });
 
   if (labelMonthly) labelMonthly.addEventListener('click', () => {
-    isProject = false;
-    updatePricingView();
+    isAnnually = false;
+    updatePricing();
   });
 
-  if (labelProject) labelProject.addEventListener('click', () => {
-    isProject = true;
-    updatePricingView();
+  if (labelAnnually) labelAnnually.addEventListener('click', () => {
+    isAnnually = true;
+    updatePricing();
   });
 
-  // Ensure all CTA buttons lead to WhatsApp with accurate pre-filled content
-  document.querySelectorAll('[data-plan]').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      const planName = btn.dataset.plan;
-      const planPrice = btn.dataset.price || '';
-      const message = `Hi Digititup Media! I am interested in ordering the "${planName}" package (${planPrice}). Please share the onboarding details!`;
-      btn.href = `https://wa.me/9779812414094?text=${encodeURIComponent(message)}`;
-    });
-  });
+  updatePricing();
 }
 
 /* ================= CONTACT FORM & WHATSAPP REDIRECT ================= */
@@ -468,6 +534,7 @@ function initContactForm() {
     const business = document.getElementById('formBusiness').value.trim();
     const phone = document.getElementById('formPhone').value.trim();
     const service = document.getElementById('formService').value;
+    const shootNeeded = document.getElementById('formShootOption') ? document.getElementById('formShootOption').value : 'No';
     const message = document.getElementById('formMessage').value.trim();
 
     if (!name || !phone || !service) {
@@ -475,7 +542,6 @@ function initContactForm() {
       return;
     }
 
-    // Build formatted WhatsApp message
     const formattedText = 
 `🔥 *New Project Inquiry - Digititup Media*
 ━━━━━━━━━━━━━━━━━━━━
@@ -483,16 +549,15 @@ function initContactForm() {
 🏢 *Business / Brand:* ${business || 'N/A'}
 📱 *Contact No.:* ${phone}
 🎯 *Service Requested:* ${service}
-💬 *Message:* ${message || 'Looking forward to working together.'}
+🎬 *On-Location Shoot Needed:* ${shootNeeded}
+💬 *Message & Goals:* ${message || 'Looking forward to working together.'}
 ━━━━━━━━━━━━━━━━━━━━
-_Submitted from media.digititup.com_`;
+_Submitted via media.digititup.com_`;
 
     const waUrl = `https://wa.me/9779812414094?text=${encodeURIComponent(formattedText)}`;
 
-    // Show on-screen toast
     showToast('🚀 Redirecting to WhatsApp with your details filled...');
 
-    // Open WhatsApp in new tab / app
     setTimeout(() => {
       window.open(waUrl, '_blank');
     }, 600);
@@ -518,13 +583,154 @@ function initFAQ() {
     question.addEventListener('click', () => {
       const isActive = item.classList.contains('active');
 
-      // Close all others
       faqItems.forEach(other => other.classList.remove('active'));
 
-      // Toggle clicked
       if (!isActive) {
         item.classList.add('active');
       }
     });
   });
+}
+
+/* ================= INTERACTIVE 3D HERO PHONE ================= */
+function initInteractive3DHeroPhone() {
+  const stage = document.getElementById('heroVisualStage');
+  const anchor = document.getElementById('phone3dAnchor');
+  const sheen = document.getElementById('phoneGlassSheen');
+  const badge1 = document.getElementById('heroBadge1');
+  const badge2 = document.getElementById('heroBadge2');
+
+  const heroImg = document.getElementById('heroPhoneImg');
+  const heroBadge = document.getElementById('heroPhoneBadge');
+  const heroViews = document.getElementById('heroPhoneViews');
+  const heroClient = document.getElementById('heroPhoneClient');
+  const heroCaption = document.getElementById('heroPhoneCaption');
+  const heroPlayBtn = document.getElementById('heroPhonePlayBtn');
+  const switcherBtns = document.querySelectorAll('.switcher-pill');
+
+  if (!stage || !anchor) return;
+
+  // 3D Parallax on Mouse Move
+  let mouseX = 0, mouseY = 0;
+  let currentX = 0, currentY = 0;
+  let isHovering = false;
+
+  stage.addEventListener('mousemove', (e) => {
+    isHovering = true;
+    const rect = stage.getBoundingClientRect();
+    // Normalize coordinates from -1 to 1
+    mouseX = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+    mouseY = ((e.clientY - rect.top) / rect.height) * 2 - 1;
+  });
+
+  stage.addEventListener('mouseenter', () => {
+    isHovering = true;
+  });
+
+  stage.addEventListener('mouseleave', () => {
+    isHovering = false;
+    mouseX = 0;
+    mouseY = 0;
+  });
+
+  // Smooth animation loop using lerp for ultra-satisfying inertia
+  function render3D() {
+    // Idle gentle floating when not hovering
+    const targetX = isHovering ? mouseX : Math.sin(Date.now() * 0.0012) * 0.35;
+    const targetY = isHovering ? mouseY : Math.cos(Date.now() * 0.0015) * 0.25;
+
+    currentX += (targetX - currentX) * 0.08;
+    currentY += (targetY - currentY) * 0.08;
+
+    const tiltX = -currentY * 18; // Max 18 deg tilt
+    const tiltY = currentX * 22;  // Max 22 deg tilt
+    const liftZ = isHovering ? 28 : 8;
+
+    anchor.style.transform = `rotateX(${tiltX.toFixed(2)}deg) rotateY(${tiltY.toFixed(2)}deg) translateZ(${liftZ}px)`;
+
+    if (sheen) {
+      const sheenOffset = (currentX * 60) + 50;
+      sheen.style.transform = `translateX(${sheenOffset}%) skewX(-25deg)`;
+    }
+
+    if (badge1) {
+      badge1.style.transform = `translate3d(${-currentX * 24}px, ${-currentY * 18}px, 60px)`;
+    }
+    if (badge2) {
+      badge2.style.transform = `translate3d(${currentX * 24}px, ${currentY * 18}px, 75px)`;
+    }
+
+    requestAnimationFrame(render3D);
+  }
+
+  requestAnimationFrame(render3D);
+
+  // Interactive Story Data Switcher
+  const STORIES = {
+    vip: {
+      img: 'assets/images/hero_phone_vip.jpg',
+      badge: '<i>●</i> VIP FOUNDER REEL',
+      views: '🔥 1.4M Reach',
+      client: 'Founder & Executive Suite',
+      caption: 'Scaling digital authority on LinkedIn & Reels with 4K on-location cinema shoots and high-retention ghost-scripting.',
+      targetReelId: 'yt-focus-secret'
+    },
+    dew: {
+      img: 'assets/images/card_mountain_dew.png',
+      badge: '<i>●</i> VIRAL CAMPAIGN',
+      views: '🔥 1.2M Views',
+      client: 'Mountain Dew Nepal',
+      caption: 'Yamaha FZ-F1 Giveaway campaign featuring high-energy pacing and interactive QR scan integration.',
+      targetReelId: 'dew-yamaha'
+    },
+    mg: {
+      img: 'assets/images/card_mg_s5.png',
+      badge: '<i>●</i> AUTOMOTIVE TVC',
+      views: '🔥 540K Views',
+      client: 'MG Motors Nepal',
+      caption: 'High-impact TVC and vertical feature strategy for the MG S5 EV focused on luxury, sustainability, and urban dynamics.',
+      targetReelId: 'mg-s5-ev'
+    }
+  };
+
+  let activeStory = 'vip';
+
+  switcherBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const storyKey = btn.dataset.reel;
+      if (!STORIES[storyKey] || storyKey === activeStory) return;
+
+      switcherBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeStory = storyKey;
+
+      const story = STORIES[storyKey];
+      heroImg.style.opacity = '0';
+      heroImg.style.transform = 'scale(1.06)';
+
+      setTimeout(() => {
+        heroImg.src = story.img;
+        heroBadge.innerHTML = story.badge;
+        heroViews.textContent = story.views;
+        heroClient.innerHTML = `${story.client} <span class="verified-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></span>`;
+        heroCaption.textContent = story.caption;
+
+        heroImg.style.opacity = '1';
+        heroImg.style.transform = 'scale(1)';
+      }, 180);
+    });
+  });
+
+  // Play button opens the corresponding reel in the modal
+  if (heroPlayBtn) {
+    heroPlayBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const targetId = STORIES[activeStory]?.targetReelId || 'dew-yamaha';
+      const reelCard = document.querySelector(`.reel-card[data-id="${targetId}"]`);
+      if (reelCard) {
+        reelCard.click();
+      }
+    });
+  }
 }

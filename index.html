@@ -3,22 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Digititup Media — High-Retention Vertical Video Production & Reels</title>
-  <meta name="description" content="Dedicated short-form video production & editing engine by Digititup Agency. We shoot, edit, and animate viral vertical videos for YouTube Shorts, Instagram Reels, TikTok, and Facebook Reels.">
+  <title>Digititup Media — High-Retention Video Production, Reels &amp; Commercials</title>
+  <meta name="description" content="Dedicated video production & creative media engine by Digititup Agency. We shoot, script, edit, and animate viral vertical videos, long-form YouTube series, creative commercial ads, and founder personal brands.">
   <link rel="canonical" href="https://media.digititup.com/">
 
   <!-- Open Graph / Meta -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Digititup Media">
-  <meta property="og:title" content="Digititup Media — Vertical Videos that Dominate the Feed">
+  <meta property="og:title" content="Digititup Media — High-Retention Video Production, Reels & Commercials">
   <meta property="og:description" content="Short-form video creation, editing & motion graphics for YouTube Shorts, Reels & TikTok. Sister company of Digititup Agency Pvt Ltd.">
   <meta property="og:url" content="https://media.digititup.com/">
-  <meta name="theme-color" content="#080d0a">
+  <meta name="theme-color" content="#060907">
 
   <!-- Google Fonts: Plus Jakarta Sans & Instrument Serif -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/digititup_icon_transparent.png">
+  <link rel="apple-touch-icon" href="assets/images/digititup_icon_transparent.png">
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
@@ -33,28 +37,19 @@
   <!-- ================= SITE HEADER ================= -->
   <header class="site-header">
     <div class="wrap nav-bar">
-      <!-- Brand Logo -->
+      <!-- Official Brand Logo -->
       <a href="#home" class="brand-logo" aria-label="Digititup Media Home">
-        <div class="logo-symbol">
-          <div class="logo-arc"></div>
-        </div>
-        <div class="logo-text">
-          <div class="logo-title">Digititup <span>Media</span></div>
-          <div class="logo-badge">
-            Sister Co. of <a href="https://digititup.com" target="_blank" rel="noopener">digititup.com</a>
-          </div>
-        </div>
+        <img src="assets/images/digititup_logo_transparent.png" alt="DigitItUp Media" class="logo-img" />
+        <span class="logo-media-pill">MEDIA</span>
       </a>
 
       <!-- Desktop Links -->
       <nav aria-label="Main Navigation">
         <ul class="nav-links">
           <li><a href="#home" class="active">Home</a></li>
-          <li><a href="#works">Works</a></li>
-          <li><a href="#services">Services</a></li>
+          <li><a href="#works">Reels</a></li>
+          <li><a href="#vip-founder" class="vip-nav-link">★ VIP Founder</a></li>
           <li><a href="#pricing">Pricing</a></li>
-          <li><a href="#reviews">Reviews</a></li>
-          <li><a href="#faq">FAQ</a></li>
         </ul>
       </nav>
 
@@ -77,133 +72,228 @@
     </div>
   </header>
 
-  <!-- Mobile Drawer -->
-  <div class="mobile-drawer" aria-label="Mobile menu">
-    <ul class="mobile-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#works">Works</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#pricing">Pricing</a></li>
-      <li><a href="#reviews">Reviews</a></li>
-      <li><a href="#faq">FAQ</a></li>
-      <li><a href="#contact">Order Service</a></li>
-    </ul>
-    <a href="https://wa.me/9779812414094?text=Hi%20Digititup%20Media!%20I%20would%20like%20to%20Book%20a%20Free%20Call." target="_blank" rel="noopener" class="btn btn-primary btn-lg" style="width:100%;">
-      <span>Book For Free on WhatsApp</span>
-    </a>
+  <!-- ================= LUXURY MINIMAL MOBILE DRAWER ================= -->
+  <div class="mobile-drawer" id="mobileDrawer" aria-label="Mobile navigation menu" aria-hidden="true">
+    <div class="mobile-drawer-bg-glow"></div>
+
+    <!-- Drawer Top Bar -->
+    <div class="mobile-drawer-top">
+      <a href="#home" class="brand-logo mobile-drawer-logo" aria-label="Digititup Media Home">
+        <img src="assets/images/digititup_logo_transparent.png" alt="DigitItUp Media" class="logo-img" />
+        <span class="logo-media-pill">MEDIA</span>
+      </a>
+      <button class="mobile-drawer-close" id="mobileDrawerClose" aria-label="Close navigation menu" type="button">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+
+    <!-- Minimal Clean Navigation Links -->
+    <nav class="mobile-nav-wrap">
+      <ul class="mobile-minimal-menu">
+        <li>
+          <a href="#home" class="mobile-nav-item">
+            <span class="m-nav-num">01</span>
+            <span class="m-nav-label">Home</span>
+            <span class="m-nav-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </a>
+        </li>
+        <li>
+          <a href="#works" class="mobile-nav-item">
+            <span class="m-nav-num">02</span>
+            <span class="m-nav-label">Reels Portfolio</span>
+            <span class="m-nav-tag">10M+ Views</span>
+          </a>
+        </li>
+        <li>
+          <a href="#vip-founder" class="mobile-nav-item m-vip-item">
+            <span class="m-nav-num" style="color:var(--gold);">03</span>
+            <span class="m-nav-label">★ VIP Founder Brand</span>
+            <span class="m-nav-vip-badge">Executive</span>
+          </a>
+        </li>
+        <li>
+          <a href="#pricing" class="mobile-nav-item">
+            <span class="m-nav-num">04</span>
+            <span class="m-nav-label">Pricing Plans</span>
+            <span class="m-nav-tag">Save 20%</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Quick VIP WhatsApp CTA -->
+    <div class="mobile-drawer-cta">
+      <a href="https://wa.me/9779812414094?text=Hi%20Digititup%20Media!%20I%20want%20to%20Book%20a%20Free%20VIP%20Video%20Call." target="_blank" rel="noopener" class="btn btn-vip-primary btn-lg mobile-cta-btn">
+        <span>Book For Free on WhatsApp</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+
+    <!-- Social Media Links & Direct Connect -->
+    <div class="mobile-drawer-social">
+      <div class="mobile-social-title">Follow &amp; Connect With Us</div>
+      <div class="mobile-social-grid">
+        <a href="https://www.tiktok.com/@digititup" target="_blank" rel="noopener" class="m-social-btn" aria-label="TikTok">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.29 0 .58.04.85.12V9.4a6.33 6.33 0 0 0-.85-.06A6.34 6.34 0 0 0 3.1 15.68a6.34 6.34 0 0 0 10.82 4.48 6.27 6.27 0 0 0 1.87-4.49V8.69a8.18 8.18 0 0 0 4.8 1.56V6.8a4.85 4.85 0 0 1-1-.11z"/></svg>
+          <span>TikTok</span>
+        </a>
+        <a href="https://www.instagram.com/digititup/" target="_blank" rel="noopener" class="m-social-btn" aria-label="Instagram">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          <span>Instagram</span>
+        </a>
+        <a href="https://www.youtube.com/@DigititUp" target="_blank" rel="noopener" class="m-social-btn" aria-label="YouTube">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          <span>YouTube</span>
+        </a>
+        <a href="https://www.facebook.com/digititupagency" target="_blank" rel="noopener" class="m-social-btn" aria-label="Facebook">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          <span>Facebook</span>
+        </a>
+      </div>
+
+      <!-- Direct Contact Details -->
+      <div class="mobile-direct-info">
+        <a href="tel:+9779812414094" class="m-direct-item">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>+977 9812414094</span>
+        </a>
+        <span class="m-direct-dot">·</span>
+        <a href="mailto:digititup@gmail.com" class="m-direct-item">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <span>digititup@gmail.com</span>
+        </a>
+      </div>
+    </div>
   </div>
 
   <main id="mainContent">
 
-    <!-- ================= HERO SECTION ================= -->
-    <section class="sec hero-sec" id="home">
+    <!-- ================= HERO SECTION (SUPER VIP GLASSY) ================= -->
+    <section class="sec hero-sec hero-vip-sec" id="home">
+      <!-- Ambient Luxury Glow Orbs -->
+      <div class="ambient-orb ambient-orb-1"></div>
+      <div class="ambient-orb ambient-orb-2"></div>
+
       <div class="wrap">
         <div class="hero-grid">
           <!-- Left Hero Copy -->
           <div class="hero-copy">
-            <div class="hero-pill-badge">
-              <span class="pill-glow"></span>
-              <span>Sister Company of <a href="https://digititup.com" target="_blank" rel="noopener">Digititup Agency Pvt Ltd</a></span>
+            <div class="hero-pill-badge hero-vip-pill">
+              <span class="pill-glow-vip"></span>
+              <span class="pill-vip-text">★ PRIVATE MEDIA SUITE · SISTER CO. OF <a href="https://digititup.com" target="_blank" rel="noopener">DIGITITUP AGENCY</a></span>
             </div>
 
-            <h1 class="hero-headline">
-              We Engineer Vertical Videos <br>
-              <span class="text-gradient">that dominate the</span> <span class="serif-italic">feed.</span>
+            <h1 class="hero-headline hero-vip-headline">
+              We Engineer Videos <br>
+              <span class="text-vip-gradient">that command the</span> <span class="serif-italic-vip">spotlight.</span>
             </h1>
 
-            <p class="hero-sub">
-              A specialized creative engine dedicated to short-form video production. We shoot, script, edit, and animate high-retention vertical videos for <strong>YouTube Shorts</strong>, <strong>Instagram Reels</strong>, <strong>TikTok</strong>, and <strong>Facebook Reels</strong>.
+            <p class="hero-sub hero-vip-sub">
+              An elite short-form production studio and private creative engine. From viral <strong>Instagram Reels</strong>, <strong>TikToks</strong>, and <strong>YouTube Shorts</strong> to high-converting <strong>Commercial Ad Shoots</strong> and <strong>VIP Founder Personal Brands</strong> — we turn audience attention into market dominance.
             </p>
 
             <div class="hero-ctas">
-              <a href="https://wa.me/9779812414094?text=Hi%20Digititup%20Media!%20I%20want%20to%20book%20a%20Free%20Short-Form%20Video%20Strategy%20Call%20with%20your%20team." target="_blank" rel="noopener" class="btn btn-primary btn-lg">
+              <a href="https://wa.me/9779812414094?text=Hi%20Digititup%20Media!%20I%20want%20to%20book%20a%20Free%20VIP%20Video%20Strategy%20Call%20with%20your%20team." target="_blank" rel="noopener" class="btn btn-vip-primary btn-lg">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"/></svg>
-                <span>Book For Free</span>
+                <span>Book For Free (WhatsApp VIP)</span>
               </a>
 
-              <a href="#works" class="btn btn-outline btn-lg">
-                <span>Explore Our Reels</span>
+              <a href="#works" class="btn btn-glass-vip btn-lg">
+                <span>Explore Viral Reels</span>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
               </a>
             </div>
 
-            <!-- Stats Row -->
-            <div class="hero-stats-row">
-              <div class="stat-item">
+            <!-- Glassy Hero Stats Row -->
+            <div class="hero-stats-row hero-vip-stats">
+              <div class="stat-glass-card">
                 <div class="stat-val">10<span>M+</span></div>
                 <div class="stat-lbl">Views Generated</div>
               </div>
-              <div class="stat-item">
+              <div class="stat-glass-card">
                 <div class="stat-val">48<span>h</span></div>
                 <div class="stat-lbl">Fast Turnaround</div>
               </div>
-              <div class="stat-item">
-                <div class="stat-val">100<span>+</span></div>
-                <div class="stat-lbl">Reels Produced</div>
+              <div class="stat-glass-card">
+                <div class="stat-val">88.4<span>%</span></div>
+                <div class="stat-lbl">Avg Retention</div>
               </div>
-              <div class="stat-item">
-                <div class="stat-val">98<span>%</span></div>
-                <div class="stat-lbl">Client Retention</div>
+              <div class="stat-glass-card">
+                <div class="stat-val">100<span>+</span></div>
+                <div class="stat-lbl">Productions</div>
               </div>
             </div>
           </div>
 
-          <!-- Right Hero Visual / Interactive Phone Mockup -->
-          <div class="hero-visual">
-            <div class="float-badge float-badge-1">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="#21d800"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-              <div>
-                <div style="font-size:11px;color:var(--ink-3);">Average Retention</div>
-                <div style="font-size:14px;color:#fff;font-weight:700;">85% Watch-Time</div>
-              </div>
-            </div>
-
-            <div class="float-badge float-badge-2">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="#ff4757"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-              <div>
-                <div style="font-size:11px;color:var(--ink-3);">Mountain Dew Reel</div>
-                <div style="font-size:14px;color:#fff;font-weight:700;">1.2M+ Viral Views</div>
-              </div>
-            </div>
-
-            <!-- Phone Frame -->
-            <div class="phone-mockup-wrap">
-              <div class="phone-notch">
-                <div class="phone-lens"></div>
+          <!-- Right Hero Visual / Interactive 3D Titanium Glass Phone Stage -->
+          <div class="hero-visual" id="heroVisualStage">
+            <div class="phone-3d-anchor" id="phone3dAnchor">
+              
+              <!-- Floating Glass Badges with 3D Depth Parallax -->
+              <div class="float-badge float-badge-glass float-badge-1" id="heroBadge1">
+                <div class="float-badge-pulse"></div>
+                <div>
+                  <div style="font-size:10px;color:var(--ink-3);letter-spacing:0.06em;text-transform:uppercase;">VIP Retention Engine</div>
+                  <div style="font-size:13.5px;color:#fff;font-weight:700;">88.4% Average Watch-Time</div>
+                </div>
               </div>
 
-              <div class="phone-screen">
-                <img src="assets/images/card_mountain_dew.png" alt="Featured Viral Reel Preview" />
+              <div class="float-badge float-badge-glass float-badge-2" id="heroBadge2">
+                <span style="color:var(--gold);font-size:18px;">★</span>
+                <div>
+                  <div style="font-size:10px;color:var(--gold);font-weight:700;letter-spacing:0.08em;text-transform:uppercase;">VIP Founder Suite</div>
+                  <div style="font-size:13.5px;color:#fff;font-weight:700;">We Shoot · We Script · We Scale</div>
+                </div>
+              </div>
 
-                <div class="reel-overlay">
-                  <div class="reel-top-tags">
-                    <span class="live-badge"><i>●</i> VIRAL REEL</span>
-                    <span class="views-pill">1.2M Views</span>
-                  </div>
+              <!-- Phone Frame with Titanium Rim & 3D Glass Sheen -->
+              <div class="phone-mockup-wrap phone-mockup-vip" id="heroPhoneMockup">
+                <div class="phone-glass-sheen" id="phoneGlassSheen"></div>
+                <div class="phone-notch">
+                  <div class="phone-lens"></div>
+                </div>
 
-                  <div class="reel-center-play">
-                    <button class="play-circle-btn" onclick="document.querySelector('.reel-card[data-id=\'dew-yamaha\']').click()" aria-label="Play Reel">
-                      <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                    </button>
-                  </div>
+                <div class="phone-screen" id="heroPhoneScreen">
+                  <img id="heroPhoneImg" src="assets/images/hero_phone_vip.jpg" alt="Featured VIP Founder Production" />
 
-                  <div class="reel-bottom-info">
-                    <div class="reel-client-tag">
-                      Mountain Dew Nepal
-                      <span class="verified-badge">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                      </span>
+                  <div class="reel-overlay">
+                    <div class="reel-top-tags">
+                      <span class="live-badge" id="heroPhoneBadge"><i>●</i> VIP FOUNDER REEL</span>
+                      <span class="views-pill" id="heroPhoneViews">🔥 1.4M Reach</span>
                     </div>
-                    <p class="reel-caption">Yamaha FZ-F1 Giveaway campaign featuring high-energy pacing and interactive QR scan integration.</p>
-                    <div class="reel-audio-bar">
-                      <div class="audio-waves">
-                        <span></span><span></span><span></span><span></span>
+
+                    <div class="reel-center-play">
+                      <button class="play-circle-btn" id="heroPhonePlayBtn" aria-label="Play Reel">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                      </button>
+                    </div>
+
+                    <div class="reel-bottom-info">
+                      <div class="reel-client-tag" id="heroPhoneClient">
+                        Founder &amp; Executive Suite
+                        <span class="verified-badge">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                        </span>
                       </div>
-                      <span>Original Audio · Digititup Sound Lab</span>
+                      <p class="reel-caption" id="heroPhoneCaption">Scaling digital authority on LinkedIn &amp; Reels with 4K on-location cinema shoots and high-retention ghost-scripting.</p>
+                      <div class="reel-audio-bar">
+                        <div class="audio-waves" id="heroPhoneAudioWaves">
+                          <span></span><span></span><span></span><span></span>
+                        </div>
+                        <span id="heroPhoneAudioText">Original Sound · Digititup Audio Mastering</span>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
+
+              <!-- Interactive Format Switcher Below Phone -->
+              <div class="hero-phone-switcher" aria-label="Switch featured reel format">
+                <button type="button" class="switcher-pill active" data-reel="vip">👑 VIP Founder</button>
+                <button type="button" class="switcher-pill" data-reel="dew">⚡ Mountain Dew</button>
+                <button type="button" class="switcher-pill" data-reel="mg">🚗 MG S5 EV</button>
+              </div>
+
             </div>
           </div>
         </div>
@@ -212,35 +302,20 @@
         <div class="platform-strip">
           <div class="platform-strip-title">Platforms We Optimize &amp; Dominate:</div>
           <div class="platform-list">
-            <!-- TikTok -->
             <a href="https://www.tiktok.com/@digititup" target="_blank" rel="noopener" class="platform-item">
-              <span class="platform-icon">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.29 0 .58.04.85.12V9.4a6.33 6.33 0 0 0-.85-.06A6.34 6.34 0 0 0 3.1 15.68a6.34 6.34 0 0 0 10.82 4.48 6.27 6.27 0 0 0 1.87-4.49V8.69a8.18 8.18 0 0 0 4.8 1.56V6.8a4.85 4.85 0 0 1-1-.11z"/></svg>
-              </span>
+              <span class="platform-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.29 0 .58.04.85.12V9.4a6.33 6.33 0 0 0-.85-.06A6.34 6.34 0 0 0 3.1 15.68a6.34 6.34 0 0 0 10.82 4.48 6.27 6.27 0 0 0 1.87-4.49V8.69a8.18 8.18 0 0 0 4.8 1.56V6.8a4.85 4.85 0 0 1-1-.11z"/></svg></span>
               <span>TikTok</span>
             </a>
-
-            <!-- Instagram Reels -->
             <a href="https://www.instagram.com/digititup/" target="_blank" rel="noopener" class="platform-item">
-              <span class="platform-icon">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-              </span>
+              <span class="platform-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></span>
               <span>Instagram Reels</span>
             </a>
-
-            <!-- YouTube Shorts -->
             <a href="https://www.youtube.com/@DigititUp" target="_blank" rel="noopener" class="platform-item">
-              <span class="platform-icon">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-              </span>
+              <span class="platform-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></span>
               <span>YouTube Shorts</span>
             </a>
-
-            <!-- Facebook Reels -->
             <a href="https://www.facebook.com/digititupagency" target="_blank" rel="noopener" class="platform-item">
-              <span class="platform-icon">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-              </span>
+              <span class="platform-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></span>
               <span>Facebook Reels</span>
             </a>
           </div>
@@ -252,7 +327,7 @@
     <section class="sec works-sec" id="works">
       <div class="wrap">
         <div class="sec-header">
-          <div class="sec-tag">Reel Portfolio &amp; Results</div>
+          <div class="sec-tag">Reel Showcase &amp; Results</div>
           <h2 class="sec-title">
             Our Works: Engineered for <span class="serif-italic">Retention &amp; Growth</span>
           </h2>
@@ -261,7 +336,6 @@
           </p>
         </div>
 
-        <!-- Filter Pills -->
         <div class="filter-tabs">
           <button class="filter-btn active" data-filter="all">All Reels (12)</button>
           <button class="filter-btn" data-filter="campaigns">Brand Campaigns</button>
@@ -269,7 +343,6 @@
           <button class="filter-btn" data-filter="explainers">Explainers &amp; Retention</button>
         </div>
 
-        <!-- Carousel Wrapper with Chevrons -->
         <div class="reel-carousel-wrapper">
           <button class="carousel-nav-btn carousel-prev" id="scrollLeft" aria-label="Previous reels">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
@@ -278,9 +351,8 @@
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
           </button>
 
-          <!-- Horizontal Scroll Track -->
           <div class="reel-track" id="reelTrack">
-            <!-- Dynamically populated by main.js with 9:16 phone cards -->
+            <!-- Populated by main.js -->
           </div>
         </div>
       </div>
@@ -293,12 +365,8 @@
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
         </button>
 
-        <!-- Video Player Box -->
-        <div class="modal-video-box" id="modalVideoBox">
-          <!-- Video or iframe injected dynamically -->
-        </div>
+        <div class="modal-video-box" id="modalVideoBox"></div>
 
-        <!-- Reel Details Box -->
         <div class="modal-info-box">
           <div class="modal-info-top">
             <span class="modal-tag" id="modalTag">Client Name</span>
@@ -327,275 +395,262 @@
       </div>
     </div>
 
-    <!-- ================= SERVICES SECTION ================= -->
-    <section class="sec" id="services">
+    <!-- ================= NEW: LONG-FORM & YOUTUBE SECTION ================= -->
+    <section class="sec longform-sec" id="longform">
       <div class="wrap">
         <div class="sec-header">
-          <div class="sec-tag">Our Expertise &amp; Services</div>
+          <div class="sec-tag">Long-Form Video &amp; Documentaries</div>
           <h2 class="sec-title">
-            Built Exclusively for <span class="serif-italic">Short-Form Dominance</span>
+            We Tailor High-Retention <span class="serif-italic">YouTube &amp; Long-Form Videos</span>
           </h2>
           <p class="sec-desc">
-            We do not do generalist marketing. We focus 100% on producing high-retention vertical videos that convert viewers into paying customers and brand advocates.
+            Beyond 60-second reels, we engineer 10 to 45-minute deep-dives, video podcasts, and documentary-style explainers that command millions of views, hold exceptional audience retention, and build undisputed market authority.
           </p>
         </div>
 
-        <div class="services-grid">
-          <!-- Service 1: Shoot & Production -->
-          <div class="service-card">
-            <div>
-              <div class="service-icon-wrap">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
-              </div>
-              <h3 class="service-title">Vertical Video Shoot &amp; Production</h3>
-              <p class="service-desc">
-                On-location 4K vertical shoots in Kathmandu and across Nepal. Equipped with cinema cameras, wireless audio, studio lighting, and creative direction.
-              </p>
+        <div class="longform-grid">
+          <!-- Card 1: Tech & Economy Documentary -->
+          <div class="longform-card">
+            <div class="longform-thumb-wrap">
+              <img src="assets/images/yt_2tZMlG5KZBU.jpg" alt="Decoding Technology in Nepal" class="longform-thumb" />
+              <span class="longform-badge">Tech &amp; Economy</span>
+              <span class="longform-duration">22:45</span>
             </div>
-            <ul class="service-features">
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
-                Professional 4K vertical cinema rigs
-              </li>
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
-                On-set direction &amp; teleprompter support
-              </li>
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
-                Studio &amp; commercial lighting setup
-              </li>
-            </ul>
-          </div>
-
-          <!-- Service 2: High-Retention Editing -->
-          <div class="service-card">
-            <div>
-              <div class="service-icon-wrap">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"/></svg>
+            <div class="longform-body">
+              <div>
+                <h3 class="longform-title">Decoding Technology &amp; The Future of Digital Economy in Nepal</h3>
+                <p class="longform-desc">
+                  A deeply researched macroeconomic and tech ecosystem documentary. Built with transparent citations, motion graphics, and high-retention pacing that maintained an 84% average view duration.
+                </p>
               </div>
-              <h3 class="service-title">Edits &amp; High-Retention Content</h3>
-              <p class="service-desc">
-                Pacing crafted for human psychology. Hook optimization in the first 3 seconds, dynamic zooms, b-roll layering, and cinema-grade sound design.
-              </p>
-            </div>
-            <ul class="service-features">
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
-                First 3-second hook engineering
-              </li>
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
-                Dynamic kinetic subtitles &amp; SFX
-              </li>
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
-                Fast 24 to 48-hour turnarounds
-              </li>
-            </ul>
-          </div>
-
-          <!-- Service 3: Motion Graphics & Animation -->
-          <div class="service-card">
-            <div>
-              <div class="service-icon-wrap">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              <div class="longform-features">
+                <span class="longform-pill">Kinetic Infographics</span>
+                <span class="longform-pill">Open-Source Research</span>
+                <span class="longform-pill">Sound Mastering</span>
               </div>
-              <h3 class="service-title">Motion Graphics &amp; Animation Design</h3>
-              <p class="service-desc">
-                Custom 2D/3D motion graphics, kinetic typography, 3D product visualization, and animated UI mockups that elevate your brand beyond generic footage.
-              </p>
-            </div>
-            <ul class="service-features">
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
-                2D &amp; 3D motion design assets
-              </li>
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
-                Product breakdown &amp; 3D renders
-              </li>
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
-                Brand identity integration &amp; lower thirds
-              </li>
-            </ul>
-          </div>
-
-          <!-- Service 4: Scriptwriting & Strategy -->
-          <div class="service-card">
-            <div>
-              <div class="service-icon-wrap">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-              </div>
-              <h3 class="service-title">Viral Scriptwriting &amp; Strategy</h3>
-              <p class="service-desc">
-                Data-driven content frameworks backed by audience analytics. We develop winning story angles, research viral topics, and write high-converting CTAs.
-              </p>
-            </div>
-            <ul class="service-features">
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
-                Competitor &amp; viral trend analysis
-              </li>
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
-                Step-by-step word-for-word scripting
-              </li>
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
-                Call-to-action &amp; conversion funnels
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= CLIENT REVIEWS (REAL CLIENTS) ================= -->
-    <section class="sec reviews-sec" id="reviews">
-      <div class="wrap">
-        <div class="sec-header">
-          <div class="sec-tag">Real Client Feedback</div>
-          <h2 class="sec-title">
-            Trusted by Nepal’s <span class="serif-italic">Top Brands &amp; Creators</span>
-          </h2>
-          <p class="sec-desc">
-            Hear directly from the real brands, corporations, and institutions we have scaled with high-retention short-form video.
-          </p>
-        </div>
-
-        <div class="reviews-grid">
-          <!-- Review 1: The Presidential School -->
-          <div class="review-card">
-            <div>
-              <div class="review-stars">★★★★★</div>
-              <p class="review-quote">
-                "Digititup Media transformed how prospective students and parents discover our campus. Their fast-paced, youth-driven reels brought vibrant life to our online presence and delivered a 68% spike in school admissions inquiries."
-              </p>
-            </div>
-            <div class="review-author-wrap">
-              <div class="review-avatar">PS</div>
-              <div class="review-author-info">
-                <div class="review-author-name">The Presidential School</div>
-                <div class="review-author-role">Admissions &amp; Brand Committee</div>
-              </div>
+              <a href="https://wa.me/9779812414094?text=Hi%20Digititup%20Media!%20I%20want%20to%20produce%20a%20Long-Form%20YouTube%20Explainer%20Series%20for%20my%20brand.%20Let's%20discuss%20the%20details!" target="_blank" rel="noopener" class="btn btn-outline btn-sm" style="width:fit-content;">
+                <span>Discuss Long-Form Series →</span>
+              </a>
             </div>
           </div>
 
-          <!-- Review 2: Mountain Dew Nepal -->
-          <div class="review-card">
-            <div>
-              <div class="review-stars">★★★★★</div>
-              <p class="review-quote">
-                "The high-energy vertical reels engineered for the Mountain Dew Yamaha FZ-F1 giveaway generated massive viral buzz across TikTok and Instagram. Seamless QR participation and top-tier sound design."
-              </p>
+          <!-- Card 2: Yatri EV Industrial Series -->
+          <div class="longform-card">
+            <div class="longform-thumb-wrap">
+              <img src="assets/images/yt_VJcx64BvP2M.jpg" alt="Yatri P2 EV Revolution" class="longform-thumb" />
+              <span class="longform-badge">Industrial &amp; Startup Story</span>
+              <span class="longform-duration">18:12</span>
             </div>
-            <div class="review-author-wrap">
-              <div class="review-avatar">MD</div>
-              <div class="review-author-info">
-                <div class="review-author-name">Mountain Dew Nepal Campaign</div>
-                <div class="review-author-role">Varun Beverages Partner Project</div>
+            <div class="longform-body">
+              <div>
+                <h3 class="longform-title">Inside Nepal’s Made-In-Nepal EV Revolution: Yatri P2</h3>
+                <p class="longform-desc">
+                  An on-ground industrial tour capturing engineering genius, battery labs, and founder interviews. Packed with cinematic b-roll, high-energy drone sweeps, and narrative tension.
+                </p>
               </div>
-            </div>
-          </div>
-
-          <!-- Review 3: Hulas Finserv / Piro Khursani -->
-          <div class="review-card">
-            <div>
-              <div class="review-stars">★★★★★</div>
-              <p class="review-quote">
-                "Consumer financing can be complex and dry to explain, but Digititup turned 'Baya Hat ko Khel' into an engaging, comedic short-form series that reached nearly a million Nepalis organically."
-              </p>
-            </div>
-            <div class="review-author-wrap">
-              <div class="review-avatar">HF</div>
-              <div class="review-author-info">
-                <div class="review-author-name">Hulas Finserv (Piro Khursani)</div>
-                <div class="review-author-role">Digital Marketing &amp; Fintech Growth</div>
+              <div class="longform-features">
+                <span class="longform-pill">On-Location Cinema Rig</span>
+                <span class="longform-pill">Multicam Interview</span>
+                <span class="longform-pill">High-Retention Narrative</span>
               </div>
-            </div>
-          </div>
-
-          <!-- Review 4: MG Motors Nepal -->
-          <div class="review-card">
-            <div>
-              <div class="review-stars">★★★★★</div>
-              <p class="review-quote">
-                "Cinematic, modern, and high-impact. Their vertical video strategy for the MG S5 EV set a new benchmark for automotive short-form content in Nepal. Test-drive bookings exceeded our campaign projections."
-              </p>
-            </div>
-            <div class="review-author-wrap">
-              <div class="review-avatar">MG</div>
-              <div class="review-author-info">
-                <div class="review-author-name">Paramount Motors (MG Nepal)</div>
-                <div class="review-author-role">Automotive Brand Strategy</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Review 5: Kajaria Tiles -->
-          <div class="review-card">
-            <div>
-              <div class="review-stars">★★★★★</div>
-              <p class="review-quote">
-                "Their visual aesthetic and meticulous editing elevated Kajaria Tiles into a luxury architectural statement on digital platforms. Outstanding craftsmanship with color grading and pacing."
-              </p>
-            </div>
-            <div class="review-author-wrap">
-              <div class="review-avatar">KT</div>
-              <div class="review-author-info">
-                <div class="review-author-name">Kajaria Tiles Nepal</div>
-                <div class="review-author-role">Luxury Living &amp; Architectural Branding</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Review 6: AAS.IN.ASIA -->
-          <div class="review-card">
-            <div>
-              <div class="review-stars">★★★★★</div>
-              <p class="review-quote">
-                "Capturing an international conference with 40+ countries into punchy, high-energy reels is no small feat. Digititup delivered world-class event coverage that extended our global academic reach."
-              </p>
-            </div>
-            <div class="review-author-wrap">
-              <div class="review-avatar">AA</div>
-              <div class="review-author-info">
-                <div class="review-author-name">AAS.IN.ASIA Conference</div>
-                <div class="review-author-role">International Organizing Committee</div>
-              </div>
+              <a href="https://wa.me/9779812414094?text=Hi%20Digititup%20Media!%20I%20want%20to%20produce%20a%20Long-Form%20Company%20Documentary%20/%20Video%20Podcast." target="_blank" rel="noopener" class="btn btn-outline btn-sm" style="width:fit-content;">
+                <span>Plan Video Documentary →</span>
+              </a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ================= PRICING SECTION ================= -->
+    <!-- ================= NEW: CREATIVE COMMERCIAL AD SHOOT ================= -->
+    <section class="sec ad-shoot-sec" id="commercials">
+      <div class="wrap">
+        <div class="sec-header">
+          <div class="sec-tag">End-to-End Production</div>
+          <h2 class="sec-title">
+            Creative Commercial &amp; <span class="serif-italic">Brand Ad Shoots</span>
+          </h2>
+          <p class="sec-desc">
+            We plan, strategize, shoot, and produce super creative ads that convert viewers into customers. We blend cutting-edge AI workflows with top human cinema talent for extraordinary visual recall and speed.
+          </p>
+        </div>
+
+        <div class="ad-pipeline-grid">
+          <div class="ad-step-card">
+            <span class="ad-step-num">STAGE 01</span>
+            <h3 class="ad-step-title">AI Concept &amp; Pre-Vis</h3>
+            <p class="ad-step-desc">
+              We use generative AI pipelines to brainstorm bold concepts, build cinematic moodboards, and generate visual storyboards before shooting a single frame.
+            </p>
+          </div>
+
+          <div class="ad-step-card">
+            <span class="ad-step-num">STAGE 02</span>
+            <h3 class="ad-step-title">4K Cinema Shoot</h3>
+            <p class="ad-step-desc">
+              Full-scale physical production across Nepal with cinema cameras, gimbal moves, studio lighting, professional audio, and dedicated director guidance.
+            </p>
+          </div>
+
+          <div class="ad-step-card">
+            <span class="ad-step-num">STAGE 03</span>
+            <h3 class="ad-step-title">VFX &amp; Motion Design</h3>
+            <p class="ad-step-desc">
+              Cinema-grade color grading, kinetic typography, 3D product simulation, and spatial sound design that makes your ad look like a multimillion-dollar commercial.
+            </p>
+          </div>
+
+          <div class="ad-step-card">
+            <span class="ad-step-num">STAGE 04</span>
+            <h3 class="ad-step-title">Multi-Format Delivery</h3>
+            <p class="ad-step-desc">
+              Delivered in 16:9 for YouTube &amp; TVC and 9:16 vertical cuts for TikTok, Meta Ads, and Reels so you maximize ROI across every digital channel.
+            </p>
+          </div>
+        </div>
+
+        <!-- AI + Human Synergy Banner -->
+        <div class="ai-human-banner">
+          <div class="ai-human-text">
+            <h3>⚡ The AI + Human Advantage</h3>
+            <p>
+              Why pay millions to slow legacy agencies? By combining AI-accelerated pre-production with world-class human cinematography, we deliver world-class commercials at 3x the speed and a fraction of traditional agency costs.
+            </p>
+          </div>
+          <a href="https://wa.me/9779812414094?text=Hi%20Digititup%20Media!%20I%20want%20to%20produce%20an%20End-to-End%20Creative%20Commercial%20Ad%20Shoot%20for%20my%20brand." target="_blank" rel="noopener" class="btn btn-primary btn-lg">
+            <span>Book a Commercial Ad Shoot</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= NEW: VIP FOUNDER & PERSONAL BRAND SECTION ================= -->
+    <section class="sec vip-founder-sec" id="vip-founder">
+      <div class="wrap">
+        <div class="vip-card">
+          <div class="vip-header-row">
+            <div>
+              <div class="vip-badge">★ VIP PRIVATE CLIENT SERVICE</div>
+              <h2 class="vip-title">
+                Founder &amp; Executive <br>
+                <span class="text-gold-gradient">Personal Brand Creation</span>
+              </h2>
+              <p style="font-size:15px;color:var(--ink-2);max-width:620px;line-height:1.6;">
+                Built exclusively for high-value founders, CEOs, content creators, and business leaders who want to create undisputed authority on LinkedIn, YouTube, Instagram, and TikTok. We strategize, we come to you and shoot, and we produce world-class media end to end.
+              </p>
+            </div>
+
+            <div class="vip-price-wrap">
+              <span class="vip-price-currency">NPR</span>
+              <span class="vip-price-val">1,00,000</span>
+              <span class="vip-price-period">/ month (All-Inclusive VIP Retainer)</span>
+            </div>
+          </div>
+
+          <div class="vip-features-grid">
+            <div class="vip-feat-item">
+              <h4>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                We Come To You &amp; Shoot
+              </h4>
+              <p>Bi-weekly on-location filming sessions at your private office, home studio, or headquarters with cinema camera setups and lighting.</p>
+            </div>
+
+            <div class="vip-feat-item">
+              <h4>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                Full Ghost-Scripting
+              </h4>
+              <p>We research topics, structure thought-provoking arguments, write viral retention hooks, and prepare your scripts word-for-word.</p>
+            </div>
+
+            <div class="vip-feat-item">
+              <h4>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                Cinema-Grade Editing
+              </h4>
+              <p>Subtle, high-status kinetic typography, b-roll layering, color correction, and sound design tailored for executive credibility.</p>
+            </div>
+
+            <div class="vip-feat-item">
+              <h4>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+                Multi-Platform Repurposing
+              </h4>
+              <p>Every video is cut and optimized for LinkedIn video, Instagram Reels, YouTube Shorts, and X for maximum omni-channel reach.</p>
+            </div>
+
+            <div class="vip-feat-item">
+              <h4>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                Dedicated Creative Director
+              </h4>
+              <p>Direct 1-on-1 access to your personal creative director and editor who manages your entire content calendar seamlessly.</p>
+            </div>
+
+            <div class="vip-feat-item">
+              <h4>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                Total Discretion &amp; Speed
+              </h4>
+              <p>Strict NDA protection, fast 24-48 hour turnaround on urgent thought leadership topics, and VIP white-glove communication.</p>
+            </div>
+          </div>
+
+          <div class="vip-cta-row">
+            <div>
+              <div style="font-size:14px;color:var(--gold);font-weight:700;">★ Limited to 5 VIP Clients at a time to preserve quality</div>
+              <div style="font-size:12px;color:var(--ink-3);">Current onboarding queue: 2 spots remaining</div>
+            </div>
+
+            <a href="https://wa.me/9779812414094?text=Hi%20Digititup%20Media!%20I%20am%20interested%20in%20applying%20for%20the%20VIP%20Founder%20/%20Personal%20Brand%20Creation%20Retainer%20(NPR%201,00,000/month).%20Let's%20connect%20confidentially." target="_blank" rel="noopener" class="btn btn-gold btn-lg">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"/></svg>
+              <span>Apply for Founder Retainer (WhatsApp Concierge)</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PRICING SECTION (MONTHLY VS ANNUALLY) ================= -->
     <section class="sec pricing-sec" id="pricing">
       <div class="wrap">
         <div class="sec-header">
           <div class="sec-tag">Transparent Investment</div>
           <h2 class="sec-title">
-            Pay Monthly or <span class="serif-italic">Pay As You Need</span>
+            Pay Monthly or <span class="serif-italic">Lock Annual Savings (20% OFF)</span>
           </h2>
           <p class="sec-desc">
             Flexible packages built for brands, startups, and creators. All contact buttons lead directly to WhatsApp with your package details pre-filled.
           </p>
         </div>
 
-        <!-- Pricing Toggle -->
-        <div class="pricing-toggle-wrap">
-          <span class="toggle-label active" id="lblMonthly">Monthly Retainer</span>
-          <div class="toggle-switch" id="pricingSwitch" role="button" aria-label="Toggle between monthly and per-project pricing">
-            <div class="toggle-circle"></div>
+        <!-- Shoot Addon Notice Banner -->
+        <div class="shoot-addon-banner">
+          <div class="shoot-addon-left">
+            <div class="shoot-icon-tag">🎬</div>
+            <div>
+              <h4>Need On-Location 4K Video Shoots?</h4>
+              <p>The base retainers below cover full editing &amp; post-production. For on-location shooting, add a production shoot day:</p>
+            </div>
           </div>
-          <span class="toggle-label" id="lblProject">Pay As You Need</span>
-          <span class="save-badge">Save up to 25%</span>
+          <div class="shoot-price-tag">
+            + NPR 5,000 to NPR 10,000 / day
+          </div>
         </div>
 
-        <!-- Monthly Retainer Grid -->
-        <div class="pricing-grid" id="pricingMonthlyGrid">
+        <!-- Pricing Toggle (Monthly vs Annually) -->
+        <div class="pricing-toggle-wrap">
+          <span class="toggle-label active" id="lblMonthly">Pay Monthly</span>
+          <div class="toggle-switch" id="pricingSwitch" role="button" aria-label="Toggle between monthly and annual pricing">
+            <div class="toggle-circle"></div>
+          </div>
+          <span class="toggle-label" id="lblAnnually">Contracted Annually (Paid Monthly)</span>
+          <span class="save-badge">20% OFF</span>
+        </div>
+
+        <!-- Monthly / Annual Grid -->
+        <div class="pricing-grid" id="pricingGrid">
           <!-- Starter Plan -->
           <div class="pricing-card">
             <div class="pricing-top">
@@ -603,9 +658,10 @@
               <p class="plan-desc">For emerging brands and creators building steady weekly consistency on TikTok &amp; Reels.</p>
               <div class="plan-price-wrap">
                 <span class="plan-currency">NPR</span>
-                <span class="plan-price">25,000</span>
-                <span class="plan-period">/ month</span>
+                <span class="plan-price" id="priceStarter">25,000</span>
+                <span class="plan-period" id="periodStarter">/ month</span>
               </div>
+              <div class="plan-discount-note" id="discountStarter"></div>
               <div style="font-size:13px;font-weight:700;color:var(--green);">⚡ 1 Short Video / Week (4 Reels/mo)</div>
             </div>
 
@@ -632,13 +688,13 @@
               </li>
             </ul>
 
-            <a href="https://wa.me/9779812414094?text=Hi%20Digititup%20Media!%20I%20would%20like%20to%20subscribe%20to%20the%20Starter%20Monthly%20Plan%20(NPR%2025,000/mo)%20for%201%20short%20video/week.%20Please%20guide%20me%20through%20onboarding." target="_blank" rel="noopener" class="btn btn-outline" data-plan="Starter Monthly Plan" data-price="NPR 25,000/mo">
+            <a href="#" id="btnStarter" target="_blank" rel="noopener" class="btn btn-outline">
               <span>Choose Starter Plan</span>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
           </div>
 
-          <!-- Flow Plan (Featured / Most Popular) -->
+          <!-- Flow Plan (Featured) -->
           <div class="pricing-card featured">
             <div class="pricing-badge-popular">🔥 Most Popular</div>
             <div class="pricing-top">
@@ -646,9 +702,10 @@
               <p class="plan-desc">For growing businesses ready to dominate the feed with multiple viral posts every week.</p>
               <div class="plan-price-wrap">
                 <span class="plan-currency">NPR</span>
-                <span class="plan-price">50,000</span>
-                <span class="plan-period">/ month</span>
+                <span class="plan-price" id="priceFlow">50,000</span>
+                <span class="plan-period" id="periodFlow">/ month</span>
               </div>
+              <div class="plan-discount-note" id="discountFlow"></div>
               <div style="font-size:13px;font-weight:700;color:var(--green);">⚡ 2-3 Short Videos / Week (10-12 Reels/mo)</div>
             </div>
 
@@ -675,7 +732,7 @@
               </li>
             </ul>
 
-            <a href="https://wa.me/9779812414094?text=Hi%20Digititup%20Media!%20I%20want%20to%20get%20started%20with%20the%20Flow%20Monthly%20Plan%20(NPR%2050,000/mo)%20for%202-3%20short%20videos/week.%20Let's%20discuss%20our%20brand%20goals." target="_blank" rel="noopener" class="btn btn-primary" data-plan="Flow Monthly Plan" data-price="NPR 50,000/mo">
+            <a href="#" id="btnFlow" target="_blank" rel="noopener" class="btn btn-primary">
               <span>Choose Flow Plan</span>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
@@ -685,7 +742,7 @@
           <div class="pricing-card">
             <div class="pricing-top">
               <h3 class="plan-name">Viral Plan</h3>
-              <p class="plan-desc">Fully custom, high-volume editing &amp; production for enterprise brands and high-scale campaigns.</p>
+              <p class="plan-desc">Fully custom, high-volume editing &amp; production for enterprise brands and national campaigns.</p>
               <div class="plan-price-wrap">
                 <span class="plan-price" style="font-size:32px;">Custom</span>
                 <span class="plan-period">/ tailored tier</span>
@@ -716,126 +773,8 @@
               </li>
             </ul>
 
-            <a href="https://wa.me/9779812414094?text=Hi%20Digititup%20Media!%20We%20need%20high-volume,%20custom%20viral%20reels%20production%20and%20on-location%20shoot%20direction.%20I'd%20like%20to%20book%20a%20strategy%20meeting." target="_blank" rel="noopener" class="btn btn-outline" data-plan="Viral Enterprise Plan" data-price="Custom Meeting">
+            <a href="#" id="btnViral" target="_blank" rel="noopener" class="btn btn-outline">
               <span>Book a Meeting</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- Pay As You Need Grid (Hidden initially, toggled by JS) -->
-        <div class="pricing-grid" id="pricingProjectGrid" style="display:none;">
-          <!-- Single Reel -->
-          <div class="pricing-card">
-            <div class="pricing-top">
-              <h3 class="plan-name">Single Viral Reel</h3>
-              <p class="plan-desc">Perfect to test our editing quality, launch a product, or run a single promo campaign.</p>
-              <div class="plan-price-wrap">
-                <span class="plan-currency">NPR</span>
-                <span class="plan-price">7,000</span>
-                <span class="plan-period">/ reel</span>
-              </div>
-              <div style="font-size:13px;font-weight:700;color:var(--green);">⚡ 1 Single High-Impact Vertical Video</div>
-            </div>
-
-            <ul class="plan-features">
-              <li>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                1 High-retention vertical reel / short
-              </li>
-              <li>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                Hook optimization &amp; dynamic captions
-              </li>
-              <li>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                Sound effects &amp; trending audio sync
-              </li>
-              <li>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                Delivered within 48 hours
-              </li>
-            </ul>
-
-            <a href="https://wa.me/9779812414094?text=Hi%20Digititup%20Media!%20I%20want%20to%20order%201%20Single%20Viral%20Reel%20(NPR%207,000)." target="_blank" rel="noopener" class="btn btn-outline" data-plan="Single Viral Reel" data-price="NPR 7,000">
-              <span>Order Single Reel</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-          </div>
-
-          <!-- 5-Reel Sprint -->
-          <div class="pricing-card featured">
-            <div class="pricing-badge-popular">🚀 Best Sprint Value</div>
-            <div class="pricing-top">
-              <h3 class="plan-name">5-Reel Sprint Pack</h3>
-              <p class="plan-desc">A rapid content burst for product launches, event promotions, or seasonal campaigns.</p>
-              <div class="plan-price-wrap">
-                <span class="plan-currency">NPR</span>
-                <span class="plan-price">32,000</span>
-                <span class="plan-period">/ bundle</span>
-              </div>
-              <div style="font-size:13px;font-weight:700;color:var(--green);">⚡ Save NPR 3,000 (5 Edited Reels)</div>
-            </div>
-
-            <ul class="plan-features">
-              <li>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                5 Custom vertical reels / shorts
-              </li>
-              <li>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                A/B hook testing variations
-              </li>
-              <li>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                Motion graphics &amp; visual transitions
-              </li>
-              <li>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                Formatted for Instagram, TikTok &amp; YouTube
-              </li>
-            </ul>
-
-            <a href="https://wa.me/9779812414094?text=Hi%20Digititup%20Media!%20I%20want%20the%205-Reel%20Sprint%20Pack%20(NPR%2032,000)." target="_blank" rel="noopener" class="btn btn-primary" data-plan="5-Reel Sprint Pack" data-price="NPR 32,000">
-              <span>Get 5-Reel Sprint</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-          </div>
-
-          <!-- Shoot + 3 Reels -->
-          <div class="pricing-card">
-            <div class="pricing-top">
-              <h3 class="plan-name">On-Location Shoot + 3 Reels</h3>
-              <p class="plan-desc">Complete production package: our production crew comes to your venue or studio.</p>
-              <div class="plan-price-wrap">
-                <span class="plan-currency">NPR</span>
-                <span class="plan-price">45,000</span>
-                <span class="plan-period">/ session</span>
-              </div>
-              <div style="font-size:13px;font-weight:700;color:var(--green);">⚡ Half-Day Shoot + 3 Produced Reels</div>
-            </div>
-
-            <ul class="plan-features">
-              <li>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                Half-day on-location vertical 4K shoot in Kathmandu
-              </li>
-              <li>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                Wireless microphones &amp; cinema lighting included
-              </li>
-              <li>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                3 Fully edited, motion-designed viral reels
-              </li>
-              <li>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                Raw b-roll footage delivered via Google Drive
-              </li>
-            </ul>
-
-            <a href="https://wa.me/9779812414094?text=Hi%20Digititup%20Media!%20I%20want%20to%20book%20the%20On-Location%20Shoot%20+%203%20Reels%20package%20(NPR%2045,000)." target="_blank" rel="noopener" class="btn btn-outline" data-plan="On-Location Shoot + 3 Reels" data-price="NPR 45,000">
-              <span>Book Shoot Package</span>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
           </div>
@@ -843,11 +782,226 @@
       </div>
     </section>
 
-    <!-- ================= CONTACT FORM (ORDER SERVICE) ================= -->
+    <!-- ================= TEAM MANIFESTO BANNER ================= -->
+    <section class="manifesto-sec" id="manifesto">
+      <div class="wrap">
+        <div class="manifesto-box">
+          <div class="manifesto-content">
+            <div class="manifesto-badge">⚡ OUR UNCOMPROMISING MISSION</div>
+            <h2 class="manifesto-heading">
+              A Young, Motivated Squad Aiming To Be The <br>
+              <span class="text-green-gradient">Biggest Content Creating Media In The World</span>
+            </h2>
+            <p class="manifesto-desc">
+              We don't settle for mediocre, template-driven videos. We are a hungry, high-energy crew of young filmmakers, animators, researchers, and storytellers based in Kathmandu. We combine human obsession with cutting-edge AI workflows to deliver world-class content that turns brands into cultural icons.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SERVICES SECTION ================= -->
+    <section class="sec" id="services">
+      <div class="wrap">
+        <div class="sec-header">
+          <div class="sec-tag">Our Full Arsenal</div>
+          <h2 class="sec-title">
+            Built Exclusively for <span class="serif-italic">Video Dominance</span>
+          </h2>
+          <p class="sec-desc">
+            We focus 100% on producing high-retention video assets that convert viewers into paying customers and brand advocates.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <div>
+              <div class="service-icon-wrap">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+              </div>
+              <h3 class="service-title">4K On-Location Video Shoots</h3>
+              <p class="service-desc">
+                Full-scale video shoots in Kathmandu and across Nepal. Professional cinema cameras, wireless audio, studio lighting, and director guidance for NPR 5K - 10K/day.
+              </p>
+            </div>
+            <ul class="service-features">
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>Professional 4K vertical cinema rigs</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>On-set direction &amp; teleprompter support</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>Studio &amp; commercial lighting setup</li>
+            </ul>
+          </div>
+
+          <div class="service-card">
+            <div>
+              <div class="service-icon-wrap">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"/></svg>
+              </div>
+              <h3 class="service-title">Edits &amp; High-Retention Content</h3>
+              <p class="service-desc">
+                Pacing crafted for human psychology. Hook optimization in the first 3 seconds, dynamic zooms, b-roll layering, and cinema-grade sound design.
+              </p>
+            </div>
+            <ul class="service-features">
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>First 3-second hook engineering</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>Dynamic kinetic subtitles &amp; SFX</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>Fast 24 to 48-hour turnarounds</li>
+            </ul>
+          </div>
+
+          <div class="service-card">
+            <div>
+              <div class="service-icon-wrap">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              </div>
+              <h3 class="service-title">Motion Graphics &amp; 3D Animation</h3>
+              <p class="service-desc">
+                Custom 2D/3D motion graphics, kinetic typography, 3D product visualization, and animated UI mockups that elevate your brand beyond generic footage.
+              </p>
+            </div>
+            <ul class="service-features">
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>2D &amp; 3D motion design assets</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>Product breakdown &amp; 3D renders</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>Brand identity integration</li>
+            </ul>
+          </div>
+
+          <div class="service-card">
+            <div>
+              <div class="service-icon-wrap">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              </div>
+              <h3 class="service-title">Viral Scriptwriting &amp; Strategy</h3>
+              <p class="service-desc">
+                Data-driven content frameworks backed by audience analytics. We develop winning story angles, research viral topics, and write high-converting CTAs.
+              </p>
+            </div>
+            <ul class="service-features">
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>Competitor &amp; viral trend analysis</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>Step-by-step word-for-word scripting</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>Call-to-action &amp; conversion funnels</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CLIENT REVIEWS ================= -->
+    <section class="sec reviews-sec" id="reviews">
+      <div class="wrap">
+        <div class="sec-header">
+          <div class="sec-tag">Real Client Feedback</div>
+          <h2 class="sec-title">
+            Trusted by Nepal’s <span class="serif-italic">Top Brands &amp; Creators</span>
+          </h2>
+          <p class="sec-desc">
+            Hear directly from the real brands, corporations, and institutions we have scaled with high-retention video.
+          </p>
+        </div>
+
+        <div class="reviews-grid">
+          <div class="review-card">
+            <div>
+              <div class="review-stars">★★★★★</div>
+              <p class="review-quote">
+                "Digititup Media transformed how prospective students and parents discover our campus. Their fast-paced, youth-driven reels brought vibrant life to our online presence and delivered a 68% spike in school admissions inquiries."
+              </p>
+            </div>
+            <div class="review-author-wrap">
+              <div class="review-avatar">PS</div>
+              <div class="review-author-info">
+                <div class="review-author-name">The Presidential School</div>
+                <div class="review-author-role">Admissions &amp; Brand Committee</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div>
+              <div class="review-stars">★★★★★</div>
+              <p class="review-quote">
+                "The high-energy vertical reels engineered for the Mountain Dew Yamaha FZ-F1 giveaway generated massive viral buzz across TikTok and Instagram. Seamless QR participation and top-tier sound design."
+              </p>
+            </div>
+            <div class="review-author-wrap">
+              <div class="review-avatar">MD</div>
+              <div class="review-author-info">
+                <div class="review-author-name">Mountain Dew Nepal Campaign</div>
+                <div class="review-author-role">Varun Beverages Partner Project</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div>
+              <div class="review-stars">★★★★★</div>
+              <p class="review-quote">
+                "Consumer financing can be complex and dry to explain, but Digititup turned 'Baya Hat ko Khel' into an engaging, comedic short-form series that reached nearly a million Nepalis organically."
+              </p>
+            </div>
+            <div class="review-author-wrap">
+              <div class="review-avatar">HF</div>
+              <div class="review-author-info">
+                <div class="review-author-name">Hulas Finserv (Piro Khursani)</div>
+                <div class="review-author-role">Digital Marketing &amp; Fintech Growth</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div>
+              <div class="review-stars">★★★★★</div>
+              <p class="review-quote">
+                "Cinematic, modern, and high-impact. Their vertical video strategy for the MG S5 EV set a new benchmark for automotive short-form content in Nepal. Test-drive bookings exceeded our campaign projections."
+              </p>
+            </div>
+            <div class="review-author-wrap">
+              <div class="review-avatar">MG</div>
+              <div class="review-author-info">
+                <div class="review-author-name">Paramount Motors (MG Nepal)</div>
+                <div class="review-author-role">Automotive Brand Strategy</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div>
+              <div class="review-stars">★★★★★</div>
+              <p class="review-quote">
+                "Their visual aesthetic and meticulous editing elevated Kajaria Tiles into a luxury architectural statement on digital platforms. Outstanding craftsmanship with color grading and pacing."
+              </p>
+            </div>
+            <div class="review-author-wrap">
+              <div class="review-avatar">KT</div>
+              <div class="review-author-info">
+                <div class="review-author-name">Kajaria Tiles Nepal</div>
+                <div class="review-author-role">Luxury Living &amp; Architectural Branding</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div>
+              <div class="review-stars">★★★★★</div>
+              <p class="review-quote">
+                "Capturing an international conference with 40+ countries into punchy, high-energy reels is no small feat. Digititup delivered world-class event coverage that extended our global academic reach."
+              </p>
+            </div>
+            <div class="review-author-wrap">
+              <div class="review-avatar">AA</div>
+              <div class="review-author-info">
+                <div class="review-author-name">AAS.IN.ASIA Conference</div>
+                <div class="review-author-role">International Organizing Committee</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT FORM ================= -->
     <section class="sec contact-sec" id="contact">
       <div class="wrap">
         <div class="contact-grid">
-          <!-- Left Info Column -->
           <div class="contact-info-col">
             <div>
               <div class="sec-tag">Order Service Directly</div>
@@ -859,7 +1013,6 @@
               </p>
             </div>
 
-            <!-- Direct Contact Methods -->
             <a href="https://wa.me/9779812414094" target="_blank" rel="noopener" class="contact-method-card">
               <div class="contact-method-icon">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"/></svg>
@@ -891,46 +1044,49 @@
             </a>
           </div>
 
-          <!-- Right Form Box -->
           <div class="contact-form-box">
             <h3 style="font-size:24px;margin-bottom:8px;">Order Service / Project Inquiry</h3>
             <p style="font-size:14px;color:var(--ink-2);margin-bottom:28px;">Instant WhatsApp dispatch with pre-filled details.</p>
 
             <form id="orderForm">
-              <!-- Name -->
               <div class="form-group">
                 <label class="form-label" for="formName">Your Full Name <span>*</span></label>
                 <input type="text" id="formName" class="form-input" placeholder="e.g. Pratik Chaudhary" required />
               </div>
 
-              <!-- Business Name -->
               <div class="form-group">
                 <label class="form-label" for="formBusiness">Business / Brand Name</label>
                 <input type="text" id="formBusiness" class="form-input" placeholder="e.g. Presidential School / MG Nepal" />
               </div>
 
-              <!-- Contact No. -->
               <div class="form-group">
                 <label class="form-label" for="formPhone">Contact No. (Phone / WhatsApp) <span>*</span></label>
                 <input type="tel" id="formPhone" class="form-input" placeholder="e.g. +977 98XXXXXXXX" required />
               </div>
 
-              <!-- Service -->
               <div class="form-group">
                 <label class="form-label" for="formService">Select Service <span>*</span></label>
                 <select id="formService" class="form-select" required>
                   <option value="" disabled selected>Choose a package or service...</option>
-                  <option value="Starter Monthly Plan (NPR 25,000/mo)">Starter Monthly Plan (NPR 25,000 / mo)</option>
-                  <option value="Flow Monthly Plan (NPR 50,000/mo)">Flow Monthly Plan (NPR 50,000 / mo) [Most Popular]</option>
-                  <option value="Viral Custom Enterprise Retainer">Viral Custom Enterprise Retainer</option>
-                  <option value="Single Viral Reel (NPR 7,000)">Single Viral Reel (NPR 7,000)</option>
-                  <option value="5-Reel Sprint Bundle (NPR 32,000)">5-Reel Sprint Bundle (NPR 32,000)</option>
-                  <option value="On-Location Shoot + 3 Reels (NPR 45,000)">On-Location Shoot + 3 Reels (NPR 45,000)</option>
+                  <option value="VIP Founder / Personal Brand Creation (NPR 1,00,000/mo)">★ VIP Founder &amp; Personal Brand Creation (NPR 1,00,000 / mo)</option>
+                  <option value="Flow Monthly Retainer (NPR 50,000/mo)">Flow Monthly Retainer (NPR 50,000 / mo) [Most Popular]</option>
+                  <option value="Starter Monthly Retainer (NPR 25,000/mo)">Starter Monthly Retainer (NPR 25,000 / mo)</option>
+                  <option value="Annual Retainer Contract (20% OFF)">Annual Retainer Contract (20% OFF - Paid Monthly)</option>
+                  <option value="Creative Commercial / Ad Shoot (End-to-End)">End-to-End Creative Commercial / Ad Shoot</option>
+                  <option value="Long-Form & YouTube Video Series">Long-Form &amp; YouTube Video Series</option>
                   <option value="Motion Graphics & Animation Design">Motion Graphics &amp; Animation Design Only</option>
                 </select>
               </div>
 
-              <!-- Message -->
+              <div class="form-group">
+                <label class="form-label" for="formShootOption">Do you need on-location video shooting? (NPR 5K - 10K/day)</label>
+                <select id="formShootOption" class="form-select">
+                  <option value="No, we provide raw footage">No, we have our own footage (Post-production only)</option>
+                  <option value="Yes, need 4K On-Location Shoot in Kathmandu (+NPR 5K - 10K/day)">Yes, need 4K On-Location Shoot (+NPR 5,000 - 10,000 / day)</option>
+                  <option value="Not sure, please advise">Not sure, let's discuss on WhatsApp</option>
+                </select>
+              </div>
+
               <div class="form-group">
                 <label class="form-label" for="formMessage">Tell us about your project &amp; goals</label>
                 <textarea id="formMessage" class="form-textarea" placeholder="Describe what kind of videos you need, your target audience, or current challenges..."></textarea>
@@ -960,86 +1116,68 @@
             Everything You Need <span class="serif-italic">To Know</span>
           </h2>
           <p class="sec-desc">
-            Common questions about our video shoots, retainers, raw footage, turnaround times, and delivery workflows.
+            Common questions about our shoots, retainers, annual 20% discounts, raw footage, and delivery workflows.
           </p>
         </div>
 
         <div class="faq-list">
-          <!-- Q1 -->
           <div class="faq-item active">
             <button class="faq-question" type="button">
               <span>What is the turnaround time for completed reels?</span>
-              <div class="faq-toggle-icon">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-              </div>
+              <div class="faq-toggle-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div>
             </button>
             <div class="faq-answer">
               <p>For Monthly Retainer clients, our standard turnaround time is <strong>24 to 48 hours</strong> per video after receiving raw footage or script sign-off. If you are on our Flow or Viral plan, we prioritize your editing queue to ensure uninterrupted weekly posting.</p>
             </div>
           </div>
 
-          <!-- Q2 -->
           <div class="faq-item">
             <button class="faq-question" type="button">
-              <span>What if our team does not have cameras or cannot shoot?</span>
-              <div class="faq-toggle-icon">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-              </div>
+              <span>How does on-location shooting work and what are the fees?</span>
+              <div class="faq-toggle-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div>
             </button>
             <div class="faq-answer">
-              <p>No problem! We offer <strong>On-Location Shooting</strong> across Kathmandu and Nepal with our dedicated production crew, cinema cameras, wireless audio, and lighting. Alternatively, for brands wanting explainer or software videos, we can produce 100% motion graphics, 3D animations, and licensed b-roll videos without you having to record anything.</p>
+              <p>Our base editing retainers focus on high-retention post-production. When you need on-location shoots, we deploy our 4K cinema crew anywhere in Kathmandu/Nepal for <strong>NPR 5,000 to NPR 10,000 per day</strong>. This includes cinema camera bodies, prime lenses, wireless audio, studio lighting, and an on-set director.</p>
             </div>
           </div>
 
-          <!-- Q3 -->
           <div class="faq-item">
             <button class="faq-question" type="button">
-              <span>Which social media platforms do you optimize for?</span>
-              <div class="faq-toggle-icon">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-              </div>
+              <span>How does the 20% Annual Contract discount work?</span>
+              <div class="faq-toggle-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div>
             </button>
             <div class="faq-answer">
-              <p>Every video is crafted in 9:16 vertical resolution, optimized for <strong>Instagram Reels</strong>, <strong>TikTok</strong>, <strong>YouTube Shorts</strong>, and <strong>Facebook Reels</strong>. We ensure the text and key action avoid the app UI overlays (like buttons, bottom captions, and top status bars).</p>
+              <p>When you commit to a 1-year contract, you receive <strong>20% OFF</strong> every month while continuing to pay month-by-month. For example, the Flow Plan reduces from NPR 50,000 to <strong>NPR 40,000 / month</strong>, saving your business NPR 1,20,000 per year.</p>
             </div>
           </div>
 
-          <!-- Q4 -->
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span>What is included in the NPR 1,00,000/mo VIP Founder service?</span>
+              <div class="faq-toggle-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div>
+            </button>
+            <div class="faq-answer">
+              <p>This is our white-glove, all-inclusive personal branding engine for CEOs, founders, and industry leaders. We come directly to your venue to shoot, ghost-write your scripts, produce cinema-grade vertical videos, format clips for LinkedIn and X, and provide a dedicated creative director. You invest minimal time while dominating social media authority.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span>Can you produce long-form YouTube documentaries &amp; commercials?</span>
+              <div class="faq-toggle-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div>
+            </button>
+            <div class="faq-answer">
+              <p>Yes! We have a proven track record of producing 10 to 45-minute YouTube documentaries (5M+ views generated), brand TVCs (like MG S5 EV, Mountain Dew, Kajaria, and Bajaj), and podcast multi-cam productions using our hybrid AI + human cinema workflows.</p>
+            </div>
+          </div>
+
           <div class="faq-item">
             <button class="faq-question" type="button">
               <span>How are Digititup Media and Digititup Agency related?</span>
-              <div class="faq-toggle-icon">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-              </div>
+              <div class="faq-toggle-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div>
             </button>
             <div class="faq-answer">
-              <p>Digititup Media is the dedicated short-form video production and creative studio sister company of <strong>Digititup Agency Pvt Ltd</strong> (digititup.com). While the parent agency handles full-funnel digital strategy, web systems, and brand growth, Digititup Media focuses 100% on shooting, editing, and animating viral vertical video content.</p>
-            </div>
-          </div>
-
-          <!-- Q5 -->
-          <div class="faq-item">
-            <button class="faq-question" type="button">
-              <span>How do revisions work if we need changes?</span>
-              <div class="faq-toggle-icon">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-              </div>
-            </button>
-            <div class="faq-answer">
-              <p>We believe in frictionless collaboration. You can leave timestamped comments directly via Frame.io, Google Drive, or WhatsApp. We include 2 rounds of revisions on all standard plans and unlimited tweaks on our Viral custom tier.</p>
-            </div>
-          </div>
-
-          <!-- Q6 -->
-          <div class="faq-item">
-            <button class="faq-question" type="button">
-              <span>How do we send our raw footage and assets?</span>
-              <div class="faq-toggle-icon">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-              </div>
-            </button>
-            <div class="faq-answer">
-              <p>Once you get onboarded via WhatsApp, we create a dedicated Google Drive / Dropbox shared workspace for your brand where your team can upload raw clips, brand logos, font guidelines, and voiceovers anytime.</p>
+              <p>Digititup Media is the dedicated video production studio sister company of <strong>Digititup Agency Pvt Ltd</strong> (digititup.com). While the parent agency handles full-funnel marketing systems and web infrastructure, Digititup Media focuses exclusively on high-retention video creation, commercial ad shoots, and personal branding.</p>
             </div>
           </div>
         </div>
@@ -1052,19 +1190,14 @@
   <footer class="site-footer">
     <div class="wrap">
       <div class="footer-top">
-        <!-- Col 1: Brand & Sister info -->
         <div class="footer-brand-col">
           <a href="#home" class="brand-logo" aria-label="Digititup Media">
-            <div class="logo-symbol">
-              <div class="logo-arc"></div>
-            </div>
-            <div class="logo-text">
-              <div class="logo-title">Digititup <span>Media</span></div>
-            </div>
+            <img src="assets/images/digititup_logo_transparent.png" alt="DigitItUp Media" class="logo-img" />
+            <span class="logo-media-pill">MEDIA</span>
           </a>
 
           <p class="footer-desc">
-            High-retention vertical video production, kinetic editing, and motion graphics design engineered to make brands go viral and convert viewers into loyal customers.
+            High-retention vertical video production, YouTube long-form series, commercial ad shoots, and founder personal branding. Aiming to be the biggest content creating media in the world.
           </p>
 
           <div class="sister-co-badge">
@@ -1073,55 +1206,50 @@
           </div>
         </div>
 
-        <!-- Col 2: Navigation Links -->
         <div>
           <h4 class="footer-col-title">Navigation</h4>
           <ul class="footer-nav">
             <li><a href="#home">Home</a></li>
-            <li><a href="#works">Client Works</a></li>
-            <li><a href="#services">Services</a></li>
+            <li><a href="#works">Reels Portfolio</a></li>
+            <li><a href="#longform">YouTube &amp; Long-Form</a></li>
+            <li><a href="#commercials">Creative Ad Shoots</a></li>
+            <li><a href="#vip-founder" style="color:var(--gold);">VIP Founder Retainer</a></li>
             <li><a href="#pricing">Pricing Plans</a></li>
+            <li><a href="#services">Services</a></li>
             <li><a href="#reviews">Client Reviews</a></li>
             <li><a href="#faq">FAQ</a></li>
-            <li><a href="#contact">Order Service</a></li>
           </ul>
         </div>
 
-        <!-- Col 3: Sister Network -->
         <div>
           <h4 class="footer-col-title">Network &amp; Contact</h4>
           <ul class="footer-nav">
             <li><a href="https://digititup.com" target="_blank" rel="noopener">Digititup Agency</a></li>
             <li><a href="mailto:digititup@gmail.com">digititup@gmail.com</a></li>
             <li><a href="tel:+9779812414094">+977 9812414094</a></li>
-            <li><a href="https://wa.me/9779812414094" target="_blank" rel="noopener">WhatsApp Support</a></li>
+            <li><a href="https://wa.me/9779812414094" target="_blank" rel="noopener">WhatsApp Concierge</a></li>
             <li><a href="https://pratiktharu.com.np" target="_blank" rel="noopener">Pratik Chaudhary (Founder)</a></li>
           </ul>
         </div>
 
-        <!-- Col 4: Top Social Media Apps & Relatability -->
         <div>
           <h4 class="footer-col-title">Follow On Socials</h4>
           <div class="footer-social-grid">
-            <!-- TikTok -->
             <a href="https://www.tiktok.com/@digititup" target="_blank" rel="noopener" class="footer-social-link">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.29 0 .58.04.85.12V9.4a6.33 6.33 0 0 0-.85-.06A6.34 6.34 0 0 0 3.1 15.68a6.34 6.34 0 0 0 10.82 4.48 6.27 6.27 0 0 0 1.87-4.49V8.69a8.18 8.18 0 0 0 4.8 1.56V6.8a4.85 4.85 0 0 1-1-.11z"/></svg>
               <span>TikTok <b>@digititup</b></span>
             </a>
 
-            <!-- Instagram -->
             <a href="https://www.instagram.com/digititup/" target="_blank" rel="noopener" class="footer-social-link">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
               <span>Instagram <b>@digititup</b></span>
             </a>
 
-            <!-- YouTube -->
             <a href="https://www.youtube.com/@DigititUp" target="_blank" rel="noopener" class="footer-social-link">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
               <span>YouTube <b>@DigititUp</b></span>
             </a>
 
-            <!-- Facebook -->
             <a href="https://www.facebook.com/digititupagency" target="_blank" rel="noopener" class="footer-social-link">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
               <span>Facebook <b>/digititupagency</b></span>
@@ -1141,13 +1269,12 @@
     </div>
   </footer>
 
-  <!-- Toast Notification Modal -->
+  <!-- Toast Notice -->
   <div class="toast-notice" id="toastNotice">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
     <div class="toast-text">Redirecting to WhatsApp...</div>
   </div>
 
-  <!-- JavaScript -->
   <script src="js/main.js"></script>
 </body>
 </html>
