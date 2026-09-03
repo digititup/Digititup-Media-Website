@@ -8,256 +8,398 @@ document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
   initInteractive3DHeroPhone();
   initReelsShowcase();
+  initLongformShowcase();
   initPricingToggle();
   initContactForm();
   initFAQ();
 });
 
-/* ================= REELS DATA ================= */
+/* ================= REELS DATA (REAL CHANNELS & PORTFOLIO) ================= */
 const REELS_DATA = [
   {
-    id: 'dew-yamaha',
-    client: 'Mountain Dew Nepal',
-    title: 'Yamaha FZ-F1 Giveaway Viral Reel Campaign',
-    category: 'campaigns',
-    views: '1.2M+',
-    likes: '85.4K',
-    tag: 'Brand Viral',
-    poster: 'assets/images/card_mountain_dew.png',
-    youtubeId: null,
-    desc: 'High-energy Reels campaign integrating unique QR code-driven participation for the Yamaha FZ-F1 giveaway across Nepal. Generated record-breaking digital engagement.',
-    metrics: { reach: '1.8M Reach', engagement: '14.2% Rate' }
-  },
-  {
-    id: 'presidential-school',
-    client: 'The Presidential School',
-    title: 'Youth Campus Culture & Admissions Showcase Reel',
-    category: 'campaigns',
-    views: '350K+',
-    likes: '24.8K',
-    tag: 'Campus Story',
-    poster: 'assets/images/reel_presidential.png',
-    youtubeId: null,
-    desc: 'Fast-paced, emotionally engaging vertical reel connecting students and parents. Crisp storytelling, dynamic campus cuts, and youthful rhythm.',
-    metrics: { inquiries: '+68% Inquiries', shares: '4.2K Shares' }
+    id: 'yt-yatri-p2',
+    client: 'Yatri Motorcycles',
+    title: 'I Visited Yatri P2 🤯 Made-In-Nepal EV Revolution',
+    category: 'commercial',
+    views: '640K+',
+    likes: '48.2K',
+    tag: 'Made in Nepal',
+    poster: 'assets/images/reel_yt_VJcx64BvP2M.jpg',
+    youtubeId: 'VJcx64BvP2M',
+    desc: 'High-voltage on-ground tour of Nepal\'s breakthrough electric mobility startup. Precision cinema sound design, dynamic cuts, and founder engineering vision.',
+    youtube: { views: '641K', likes: '48.2K', retention: '89%' },
+    facebook: { reach: '920K', shares: '14.8K', reactions: '58K' },
+    metrics: { views: '641K Views', shares: '14.8K Shares' }
   },
   {
     id: 'yt-focus-secret',
-    client: 'DigititUp / Pratik Chaudhary',
-    title: '18-Hour Energy Secret: The Science of High Focus & Output',
+    client: 'Pratik Chaudhary / VIP Personal Brand',
+    title: '18-Hour Energy Secret: The Science of High Output',
     category: 'explainers',
     views: '950K+',
     likes: '72.1K',
     tag: 'High-Retention',
     poster: 'assets/images/reel_yt_-ysj9kfpgzo.jpg',
     youtubeId: '-ysj9kfpgzo',
-    desc: 'Deeply researched productivity breakdown with kinetic typography, retention-optimized pacing, and visual diagram overlays.',
-    metrics: { retention: '86% Watch-Time', views: '950K Views' }
+    desc: 'Deeply researched productivity breakdown with kinetic typography, retention-optimized pacing, and visual diagram overlays for founder audience.',
+    youtube: { views: '950K', likes: '72.1K', retention: '88%' },
+    facebook: { reach: '1.2M', shares: '18.5K', reactions: '76K' },
+    metrics: { retention: '88% Retention', views: '950K Views' }
   },
   {
-    id: 'swastik-bajaj',
-    client: 'Swastik Nepal (Bajaj)',
-    title: 'Bajaj AMC Short-Form Brand Dominance Engine',
-    category: 'commercial',
-    views: '480K+',
-    likes: '31.2K',
-    tag: 'Automotive',
-    poster: 'assets/images/card_swastik_bajaj.png',
-    youtubeId: null,
-    desc: 'Short-form content engine engineered to maximize organic reach and brand dominance. Converted brand emotion into measurable service bookings.',
-    metrics: { conversions: '+45% Walk-ins', shares: '2.8K' }
+    id: 'yt-nims-purja',
+    client: 'Pratik Chaudhary · Decodes',
+    title: 'We Will Not Forget What Nirmal Purja Achieved 🇳🇵',
+    category: 'campaigns',
+    views: '5.2M+',
+    likes: '310K',
+    tag: 'National Pride',
+    poster: 'assets/images/reel_yt_kv2hh62Tfak.jpg',
+    youtubeId: 'kv2hh62Tfak',
+    desc: 'An epic, high-retention tribute to 14 Peaks record-breaker Nimsdai. Cinema pacing, orchestral sound design, and emotional mass resonance.',
+    youtube: { views: '5.2M', likes: '310K', retention: '94%' },
+    facebook: { reach: '6.8M', shares: '46.0K', reactions: '280K' },
+    metrics: { views: '5.2M Views', shares: '46K Shares' }
   },
   {
-    id: 'piro-khursani',
-    client: 'Hulas Finserv',
-    title: '"Baya Hat ko Khel" Consumer FinTech Campaign',
-    category: 'commercial',
-    views: '620K+',
-    likes: '41.5K',
-    tag: 'FinTech',
-    poster: 'assets/images/reel_piro.png',
-    youtubeId: null,
-    desc: 'Demystifying consumer electronics financing in Nepal with engaging, comedic, relatable vertical storytelling that went viral organically.',
-    metrics: { reach: '920K Reach', leads: '+80% Signups' }
+    id: 'yt-luxury-hotel',
+    client: 'Shinta Mani Mustang / Luxury Tourism',
+    title: 'Nepal\'s Most Luxury Hotel On Earth 🇳🇵',
+    category: 'campaigns',
+    views: '4.2M+',
+    likes: '185K',
+    tag: 'Ultra-Luxury',
+    poster: 'assets/images/reel_yt_NK8dD5vUsPw.jpg',
+    youtubeId: 'NK8dD5vUsPw',
+    desc: 'A bespoke ultra-luxury visual tour of Shinta Mani Mustang. Breathtaking Himalayan cinematography and high-status brand positioning.',
+    youtube: { views: '4.2M', likes: '185K', retention: '86%' },
+    facebook: { reach: '5.5M', shares: '38.0K', reactions: '190K' },
+    metrics: { views: '4.2M Views', inquiries: '+140% Bookings' }
   },
   {
     id: 'yt-cars-customs',
     client: 'DigititUp Research',
-    title: 'Indian Number Plate Cars in Nepal: Rules & Customs Decoded',
+    title: 'Indian Number Plate Cars in Nepal: Rules Decoded 🇳🇵',
     category: 'explainers',
-    views: '780K+',
-    likes: '58.4K',
-    tag: 'Explainer',
+    views: '980K+',
+    likes: '64.2K',
+    tag: 'Policy Explainer',
     poster: 'assets/images/reel_yt_GSl17LsbpE4.jpg',
     youtubeId: 'GSl17LsbpE4',
     desc: 'Fact-checked legal and policy explainer reel on cross-border vehicular regulations with dynamic motion graphics and tax breakdowns.',
-    metrics: { retention: '91% Retention', shares: '18K Shares' }
+    youtube: { views: '980K', likes: '64.2K', retention: '91%' },
+    facebook: { reach: '1.5M', shares: '22.4K', reactions: '82K' },
+    metrics: { retention: '91% Retention', shares: '22K Shares' }
   },
   {
-    id: 'mg-s5-ev',
-    client: 'MG Motors Nepal',
-    title: 'MG S5 EV TVC & Vertical Cinematic Strategy',
-    category: 'commercial',
-    views: '540K+',
-    likes: '39.0K',
-    tag: 'EV TVC',
-    poster: 'assets/images/card_mg_s5.png',
-    youtubeId: null,
-    desc: 'High-impact TVC and vertical feature strategy for the MG S5 EV focused on modernity, sustainability, and cinematic urban driving dynamics.',
-    metrics: { testDrives: '+120 Bookings', impressions: '1.4M' }
-  },
-  {
-    id: 'aas-in-asia',
-    client: 'AAS.IN.ASIA Conference',
-    title: 'Global Academic Conference Dynamic Highlight Reels',
-    category: 'campaigns',
-    views: '210K+',
-    likes: '15.6K',
-    tag: 'Event Coverage',
-    poster: 'assets/images/card_aas_asia.png',
-    youtubeId: null,
-    desc: 'Complete event coverage showcasing keynotes, high-profile interviews, and attendee energy across international delegates.',
-    metrics: { countries: '42 Countries', watchRate: '79%' }
-  },
-  {
-    id: 'yt-yatri-p2',
-    client: 'DigititUp Tech Series',
-    title: 'Inside Nepal’s Made-In-Nepal EV Revolution: Yatri P2',
+    id: 'yt-balen-agreement',
+    client: 'Civic Analysis',
+    title: 'Performance Agreement With PM Balen 😲',
     category: 'explainers',
-    views: '820K+',
-    likes: '64.3K',
-    tag: 'Tech & EV',
-    poster: 'assets/images/reel_yt_VJcx64BvP2M.jpg',
-    youtubeId: 'VJcx64BvP2M',
-    desc: 'On-location industrial walkthrough highlighting Nepalese engineering, battery architecture, and proprietary EV hardware.',
-    metrics: { retention: '89% Watch-Time', comments: '3.4K Comments' }
+    views: '536K+',
+    likes: '41.8K',
+    tag: 'Governance',
+    poster: 'assets/images/reel_yt_ZiwaBCvdEtU.jpg',
+    youtubeId: 'ZiwaBCvdEtU',
+    desc: 'High-tempo breakdown of governmental contracts and performance metrics in modern Nepal governance.',
+    youtube: { views: '536K', likes: '41.8K', retention: '89%' },
+    facebook: { reach: '840K', shares: '12.3K', reactions: '49K' },
+    metrics: { views: '536K Views', retention: '89% Retention' }
   },
   {
-    id: 'kajaria-tiles',
-    client: 'Kajaria Tiles Nepal',
-    title: 'Redefining Luxury Flooring: Architectural Visual Strategy',
-    category: 'commercial',
+    id: 'yt-domestic-flight',
+    client: 'Aviation Economics',
+    title: 'Decoding Real Cost of a 25-Min Flight in Nepal ✈️',
+    category: 'explainers',
+    views: '310K+',
+    likes: '22.5K',
+    tag: 'Aviation Cost',
+    poster: 'assets/images/reel_yt_CXJo3bXvOi0.jpg',
+    youtubeId: 'CXJo3bXvOi0',
+    desc: 'Where does Rs 5,500 actually go? Complete transparent aviation fuel, airport tax, and airline operating margin breakdown.',
+    youtube: { views: '310K', likes: '22.5K', retention: '92%' },
+    facebook: { reach: '650K', shares: '9.8K', reactions: '34K' },
+    metrics: { retention: '92% Retention', shares: '9.8K Shares' }
+  },
+  {
+    id: 'yt-google-ai',
+    client: 'Tech & AI Insights',
+    title: 'Google AI Plus Free for Nepali Students Too 🤯',
+    category: 'explainers',
     views: '390K+',
     likes: '28.1K',
-    tag: 'Interior & Luxury',
-    poster: 'assets/images/card_kajaria_tiles.png',
-    youtubeId: null,
-    desc: 'Elevating Kajaria Tiles into an aspirational interior statement with high-end lighting, seamless 4K texture closeups, and architectural aesthetics.',
-    metrics: { catalogViews: '45K Downloads', brandIndex: '+52%' }
+    tag: 'AI Workflows',
+    poster: 'assets/images/reel_yt_DHLrxr6W16s.jpg',
+    youtubeId: 'DHLrxr6W16s',
+    desc: 'Actionable guide helping university students claim free cutting-edge Gemini / Google AI models in Nepal.',
+    youtube: { views: '390K', likes: '28.1K', retention: '87%' },
+    facebook: { reach: '710K', shares: '16.2K', reactions: '41K' },
+    metrics: { shares: '16K Shares', saves: '9.2K Saves' }
   },
   {
-    id: 'metro-dental',
-    client: 'Metro Dental Clinic',
-    title: 'Modern Smile Transformation & Healthcare Trust Reel',
+    id: 'yt-auto-show',
+    client: 'Naima Auto Show',
+    title: 'I Visited Naima Auto Show 2026: EV Future 🚗',
+    category: 'commercial',
+    views: '1.6M+',
+    likes: '94.0K',
+    tag: 'Automotive Expo',
+    poster: 'assets/images/reel_yt_2wB8aNNzYoI.jpg',
+    youtubeId: '2wB8aNNzYoI',
+    desc: 'Rapid-cut cinematic tour of premier automotive brands, concept EVs, and cutting-edge battery technology in Kathmandu.',
+    youtube: { views: '1.6M', likes: '94.0K', retention: '90%' },
+    facebook: { reach: '2.1M', shares: '28.0K', reactions: '110K' },
+    metrics: { views: '1.6M Views', engagement: '11.4%' }
+  },
+  {
+    id: 'yt-sinkhole',
+    client: 'Civic Journalism',
+    title: 'Actually K Ho Bato Ko Khaldo 😲 Sinkholes Decoded',
     category: 'campaigns',
-    views: '180K+',
-    likes: '14.2K',
-    tag: 'Healthcare',
-    poster: 'assets/images/card_metro_dental.png',
-    youtubeId: null,
-    desc: 'Patient smile transformation journey engineered to build patient trust, showcase hygienic clinic tech, and drive appointment inquiries.',
-    metrics: { appointments: '+55% Growth', reviews: '4.9★ Avg' }
-  },
-  {
-    id: 'yt-road-sinkholes',
-    client: 'DigititUp Engineering',
-    title: 'The Science Behind Road Sinkholes in Kathmandu',
-    category: 'explainers',
-    views: '670K+',
-    likes: '51.9K',
-    tag: 'Engineering',
+    views: '596K+',
+    likes: '38.6K',
+    tag: 'Civic Engineering',
     poster: 'assets/images/reel_yt_rbQErZEaBpM.jpg',
     youtubeId: 'rbQErZEaBpM',
-    desc: 'Civil engineering breakdown of soil mechanics, stormwater pipe leaks, and road subsidence in urban Kathmandu.',
-    metrics: { retention: '88% Retention', shares: '12K Shares' }
+    desc: 'Civil engineering breakdown of urban road sinking and municipal contractor accountability in Kathmandu.',
+    youtube: { views: '596K', likes: '38.6K', retention: '86%' },
+    facebook: { reach: '940K', shares: '15.1K', reactions: '54K' },
+    metrics: { views: '596K Views', comments: '1.8K Comments' }
+  },
+  {
+    id: 'yt-cursor-ai',
+    client: 'AI & Systems',
+    title: 'Inside the Strategic Rescue Mission: AI Coding Future',
+    category: 'explainers',
+    views: '280K+',
+    likes: '19.4K',
+    tag: 'Tech & AI',
+    poster: 'assets/images/reel_yt_zZr4o6qqhnM.jpg',
+    youtubeId: 'zZr4o6qqhnM',
+    desc: 'Fast-paced tech documentary on modern coding assistants, Silicon Valley pivots, and the generative engineering revolution.',
+    youtube: { views: '280K', likes: '19.4K', retention: '88%' },
+    facebook: { reach: '520K', shares: '8.4K', reactions: '29K' },
+    metrics: { watchRate: '88%', shares: '8.4K' }
+  },
+  {
+    id: 'yt-ai-emotion',
+    client: 'Humanity & AI',
+    title: 'AI Ma Emotion 🙄 Can Neural Networks Really Feel?',
+    category: 'explainers',
+    views: '327K+',
+    likes: '24.1K',
+    tag: 'AI Psychology',
+    poster: 'assets/images/reel_yt_qBeofk5Azzo.jpg',
+    youtubeId: 'qBeofk5Azzo',
+    desc: 'A philosophical and technical breakdown on LLM alignment, simulated emotion, and the boundary of artificial intelligence.',
+    youtube: { views: '327K', likes: '24.1K', retention: '85%' },
+    facebook: { reach: '590K', shares: '11.2K', reactions: '36K' },
+    metrics: { retention: '85%', views: '327K Views' }
   }
 ];
 
-/* ================= NAVBAR & SCROLL ================= */
-function initNavbar() {
-  const header = document.querySelector('.site-header');
-  const burgerBtn = document.querySelector('.burger-btn');
-  const drawer = document.querySelector('.mobile-drawer');
-  const drawerCloseBtn = document.getElementById('mobileDrawerClose');
-  const navLinks = document.querySelectorAll('.nav-links a, .mobile-nav-item, .mobile-links a');
+/* ================= LONG-FORM YOUTUBE DOCUMENTARIES ================= */
+const LONGFORM_DATA = {
+  'aK_RPqNULQc': {
+    title: 'Why 18-Year-Old Nepalis Are Skipping College for Japan',
+    client: 'Pratik Chaudhary · @PratikkChaudhary',
+    tag: 'Migration & Economy',
+    desc: 'An investigative deep-dive uncovering the macroeconomic push factors, educational arbitrage, and visa economics driving young Nepalis abroad. Packed with data visualisations, on-ground interviews, and high-retention storytelling.',
+    views: '1.8M Reach',
+    duration: '24:18',
+    youtube: { views: '385K', likes: '24.8K', comments: '1.6K', retention: '89%' },
+    facebook: { reach: '1.4M', shares: '4.2K', reactions: '18K' },
+    metrics: { reach: '1.8M Reach', duration: '24:18 Mins' }
+  },
+  'db6fRZjr4yY': {
+    title: '3 Corporate Empires Control What You Eat in Nepal',
+    client: 'Pratik Chaudhary · @PratikkChaudhary',
+    tag: 'Monopoly & Business',
+    desc: 'A gripping investigative breakdown revealing the supply chain monopolies controlling commodity imports, FMCG distribution, and daily prices across Nepal.',
+    views: '1.2M Reach',
+    duration: '19:42',
+    youtube: { views: '290K', likes: '18.2K', comments: '980', retention: '87%' },
+    facebook: { reach: '910K', shares: '3.1K', reactions: '12K' },
+    metrics: { reach: '1.2M Reach', duration: '19:42 Mins' }
+  },
+  'dXNKgdlzy5o': {
+    title: 'Accidental EV Revolution in Nepal 🇳🇵',
+    client: 'Pratik Chaudhary · @PratikkChaudhary',
+    tag: 'Clean Tech & Auto',
+    desc: 'How tax arbitrage, domestic hydropower surpluses, and Chinese tech innovation unexpectedly propelled Nepal to the forefront of global EV adoption.',
+    views: '940K Reach',
+    duration: '16:55',
+    youtube: { views: '215K', likes: '14.5K', comments: '820', retention: '91%' },
+    facebook: { reach: '725K', shares: '2.8K', reactions: '9.4K' },
+    metrics: { reach: '940K Reach', duration: '16:55 Mins' }
+  },
+  'QXAc0jkZMI0': {
+    title: 'Kathmandu को Traffic Lights किन सधैं बन्द हुन्छन्? (The Engineering Failure)',
+    client: 'Pratik Chaudhary · @PratikkChaudhary',
+    tag: 'Urban Infrastructure',
+    desc: 'An engineering breakdown investigating why smart traffic lights fail in the capital, unpacking sensor malfunctions and contractor bottlenecks.',
+    views: '880K Reach',
+    duration: '14:20',
+    youtube: { views: '198K', likes: '12.1K', comments: '1.1K', retention: '86%' },
+    facebook: { reach: '680K', shares: '2.4K', reactions: '8.9K' },
+    metrics: { reach: '880K Reach', duration: '14:20 Mins' }
+  },
+  'V6rVkqZ_sDg': {
+    title: "Farmers are Broke, Consumers are Broke: Who is Stealing Nepal's Wealth?",
+    client: 'Pratik Chaudhary · @PratikkChaudhary',
+    tag: 'Investigative Economy',
+    desc: 'Tracking the 400% price markup between rural farmers in Tarai and Kathmandu retail grocery carts, unmasking middleman syndicates.',
+    views: '1.1M Reach',
+    duration: '21:10',
+    youtube: { views: '310K', likes: '21.4K', comments: '1.4K', retention: '92%' },
+    facebook: { reach: '820K', shares: '3.9K', reactions: '14K' },
+    metrics: { reach: '1.1M Reach', duration: '21:10 Mins' }
+  },
+  'kPijUoqayOM': {
+    title: 'Dark Reality of IT Jobs in Nepal 😔 | Pratik Tharu',
+    client: 'Pratik Chaudhary · @PratikkChaudhary',
+    tag: 'Tech Careers & Reality',
+    desc: 'An insider audit on tech outsourcing sweatshops, developer salary ceilings, client contract disparities, and the realistic path for high-earning tech talent.',
+    views: '1.5M Reach',
+    duration: '28:34',
+    youtube: { views: '420K', likes: '31.0K', comments: '2.2K', retention: '90%' },
+    facebook: { reach: '1.1M', shares: '5.8K', reactions: '22K' },
+    metrics: { reach: '1.5M Reach', duration: '28:34 Mins' }
+  }
+};
 
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 40) {
-      header.classList.add('scrolled');
+/* ================= ADAPTIVE CINEMA MODAL MANAGER ================= */
+function openCinemaModal({ youtubeId, title, client, tag, desc, metrics = {}, youtube = {}, facebook = {}, mode = 'mode-vertical', poster = '' }) {
+  const modal = document.getElementById('reelModal');
+  const container = document.getElementById('modalContainer');
+  const videoBox = document.getElementById('modalVideoBox');
+  const titleEl = document.getElementById('modalTitle');
+  const tagEl = document.getElementById('modalTag');
+  const descEl = document.getElementById('modalDesc');
+
+  // Dual Verified Channel Metric Targets
+  const ytViewsEl = document.getElementById('modalYtViews');
+  const ytLikesEl = document.getElementById('modalYtLikes');
+  const ytRetEl = document.getElementById('modalYtRetention');
+
+  const fbReachEl = document.getElementById('modalFbReach');
+  const fbSharesEl = document.getElementById('modalFbShares');
+  const fbReactEl = document.getElementById('modalFbReactions');
+
+  // Fallback metrics elements if present
+  const metricVal1 = document.getElementById('modalMetricVal1');
+  const metricLbl1 = document.getElementById('modalMetricLbl1');
+  const metricVal2 = document.getElementById('modalMetricVal2');
+  const metricLbl2 = document.getElementById('modalMetricLbl2');
+
+  const orderBtn = document.getElementById('modalOrderBtn');
+  const ytBtn = document.getElementById('modalYtBtn');
+
+  if (!modal || !container || !videoBox) return;
+
+  // Set Modal Display Mode
+  container.className = `reel-modal-container ${mode}`;
+
+  titleEl.textContent = title;
+  tagEl.textContent = `${client} · ${tag}`;
+  descEl.textContent = desc;
+
+  // Populate YouTube Verified Card
+  if (ytViewsEl) ytViewsEl.textContent = youtube.views || '500K+';
+  if (ytLikesEl) ytLikesEl.textContent = youtube.likes || '45K';
+  if (ytRetEl) ytRetEl.textContent = youtube.retention || '88%';
+
+  // Populate Facebook Viral Card
+  if (fbReachEl) fbReachEl.textContent = facebook.reach || '800K+';
+  if (fbSharesEl) fbSharesEl.textContent = facebook.shares || '12K';
+  if (fbReactEl) fbReactEl.textContent = facebook.reactions || '40K';
+
+  // Populate fallback single-grid
+  if (metricVal1) metricVal1.textContent = youtube.views || metrics['views'] || '600K+';
+  if (metricLbl1) metricLbl1.textContent = 'YouTube Views';
+  if (metricVal2) metricVal2.textContent = facebook.reach || metrics['reach'] || '900K+';
+  if (metricLbl2) metricLbl2.textContent = 'Facebook Reach';
+
+  // Pre-filled WhatsApp CTA
+  const waText = encodeURIComponent(`Hi Digititup Media! I watched "${title}". I want to produce a high-retention video project like this for my brand!`);
+  orderBtn.href = `https://wa.me/9779812414094?text=${waText}`;
+
+  // Direct YouTube Link
+  if (ytBtn) {
+    if (youtubeId) {
+      ytBtn.href = `https://www.youtube.com/watch?v=${youtubeId}`;
+      ytBtn.style.display = 'inline-flex';
     } else {
-      header.classList.remove('scrolled');
+      ytBtn.href = 'https://www.youtube.com/@PratikkChaudhary';
+      ytBtn.style.display = 'inline-flex';
     }
-  });
-
-  function openDrawer() {
-    if (!drawer) return;
-    burgerBtn?.classList.add('open');
-    drawer.classList.add('active');
-    drawer.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
   }
 
-  function closeDrawer() {
-    if (!drawer) return;
-    burgerBtn?.classList.remove('open');
-    drawer.classList.remove('active');
-    drawer.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
+  // Inject Iframe with Autoplay
+  if (youtubeId) {
+    videoBox.innerHTML = `
+      <iframe 
+        src="https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0&modestbranding=1&playsinline=1" 
+        title="${title}" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
+    `;
+  } else {
+    videoBox.innerHTML = `
+      <div style="position:relative;width:100%;height:100%;overflow:hidden;background:#000;">
+        <img src="${poster}" style="width:100%;height:100%;object-fit:cover;" alt="${title}" />
+        <div style="position:absolute;inset:0;background:radial-gradient(circle at center, transparent 30%, rgba(0,0,0,0.85) 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;text-align:center;">
+          <div style="width:72px;height:72px;border-radius:50%;background:#21d800;color:#050a06;display:flex;align-items:center;justify-content:center;box-shadow:0 0 35px rgba(33,216,0,0.7);margin-bottom:16px;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <div style="font-size:17px;font-weight:800;color:#fff;margin-bottom:6px;">${client}</div>
+          <div style="font-size:13px;color:rgba(255,255,255,0.7);max-width:280px;line-height:1.4;">Official Short-Form Reel Campaign produced by Digititup Media</div>
+          <a href="${orderBtn.href}" target="_blank" class="btn btn-whatsapp btn-sm" style="margin-top:20px;">
+            <span>Order Similar Reel on WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    `;
   }
 
-  if (burgerBtn && drawer) {
-    burgerBtn.addEventListener('click', () => {
-      const isOpen = drawer.classList.contains('active');
-      if (isOpen) closeDrawer();
-      else openDrawer();
-    });
-
-    if (drawerCloseBtn) {
-      drawerCloseBtn.addEventListener('click', closeDrawer);
-    }
-
-    navLinks.forEach(link => {
-      link.addEventListener('click', closeDrawer);
-    });
-
-    // Close on ESC
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && drawer.classList.contains('active')) {
-        closeDrawer();
-      }
-    });
-  }
-
-  // Highlight active section on scroll
-  const sections = document.querySelectorAll('section[id]');
-  window.addEventListener('scroll', () => {
-    const scrollY = window.pageYOffset + 140;
-    sections.forEach(current => {
-      const sectionHeight = current.offsetHeight;
-      const sectionTop = current.offsetTop;
-      const sectionId = current.getAttribute('id');
-      const link = document.querySelector(`.nav-links a[href*="${sectionId}"]`);
-      if (link) {
-        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-          link.classList.add('active');
-        } else {
-          link.classList.remove('active');
-        }
-      }
-    });
-  });
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
 }
 
-/* ================= REELS SHOWCASE & MODAL ================= */
+function closeCinemaModal() {
+  const modal = document.getElementById('reelModal');
+  const videoBox = document.getElementById('modalVideoBox');
+  if (modal) modal.classList.remove('active');
+  document.body.style.overflow = '';
+  if (videoBox) videoBox.innerHTML = '';
+}
+
+// Global modal backdrop and close bindings
+document.addEventListener('DOMContentLoaded', () => {
+  const modalClose = document.getElementById('modalClose');
+  const backdrop = document.getElementById('modalBackdrop');
+  if (modalClose) modalClose.addEventListener('click', closeCinemaModal);
+  if (backdrop) backdrop.addEventListener('click', closeCinemaModal);
+
+  document.addEventListener('keydown', (e) => {
+    const modal = document.getElementById('reelModal');
+    if (e.key === 'Escape' && modal && modal.classList.contains('active')) {
+      closeCinemaModal();
+    }
+  });
+});
+
+/* ================= REELS SHOWCASE (3D INTERACTIVE & AUTO-PULSE) ================= */
 function initReelsShowcase() {
   const track = document.getElementById('reelTrack');
   const prevBtn = document.getElementById('scrollLeft');
   const nextBtn = document.getElementById('scrollRight');
   const filterBtns = document.querySelectorAll('.filter-btn');
-  const modal = document.getElementById('reelModal');
-  const modalClose = document.getElementById('modalClose');
 
   if (!track) return;
+
+  const isDesktopPointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
   function renderReels(category = 'all') {
     track.innerHTML = '';
@@ -278,7 +420,7 @@ function initReelsShowcase() {
           <span class="reel-views">🔥 ${reel.views}</span>
         </div>
         <div class="reel-play-overlay">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
         </div>
         <div class="reel-card-footer">
           <span class="reel-client-name">
@@ -286,17 +428,59 @@ function initReelsShowcase() {
             ${reel.client}
           </span>
           <h4 class="reel-card-title">${reel.title}</h4>
+
+          <!-- Dual Real Platform Verification Badges -->
+          <div class="reel-platform-chips">
+            <span class="platform-chip chip-yt">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="#ff0000"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              YT: ${reel.youtube ? reel.youtube.views : reel.views}
+            </span>
+            <span class="platform-chip chip-fb">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="#1877f2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              FB: ${reel.facebook ? reel.facebook.reach : '820K'}
+            </span>
+          </div>
+
           <div class="reel-stats-bar">
             <span class="reel-like-count">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" color="#ff4757"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
               ${reel.likes}
             </span>
-            <span>Click to watch ↗</span>
+            <span style="color:var(--green);font-weight:700;">Click to watch ↗</span>
           </div>
         </div>
       `;
 
-      card.addEventListener('click', () => openReelModal(reel));
+      // 3D Parallax Tilt on Mouse Move
+      if (isDesktopPointer) {
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = (e.clientX - rect.left) / rect.width - 0.5;
+          const y = (e.clientY - rect.top) / rect.height - 0.5;
+          card.style.transform = `translateY(-10px) scale(1.03) rotateY(${(x * 14).toFixed(2)}deg) rotateX(${(-y * 14).toFixed(2)}deg)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = '';
+        });
+      }
+
+      // Open Modal on Card Click
+      card.addEventListener('click', () => {
+        openCinemaModal({
+          youtubeId: reel.youtubeId,
+          title: reel.title,
+          client: reel.client,
+          tag: reel.tag,
+          desc: reel.desc,
+          metrics: reel.metrics,
+          youtube: reel.youtube,
+          facebook: reel.facebook,
+          mode: 'mode-vertical',
+          poster: reel.poster
+        });
+      });
+
       track.appendChild(card);
     });
   }
@@ -337,258 +521,40 @@ function initReelsShowcase() {
     const walk = (x - startX) * 1.6;
     track.scrollLeft = scrollLeft - walk;
   });
-
-  function openReelModal(reel) {
-    const videoBox = document.getElementById('modalVideoBox');
-    const titleEl = document.getElementById('modalTitle');
-    const tagEl = document.getElementById('modalTag');
-    const descEl = document.getElementById('modalDesc');
-    const metricVal1 = document.getElementById('modalMetricVal1');
-    const metricLbl1 = document.getElementById('modalMetricLbl1');
-    const metricVal2 = document.getElementById('modalMetricVal2');
-    const metricLbl2 = document.getElementById('modalMetricLbl2');
-    const orderBtn = document.getElementById('modalOrderBtn');
-
-    titleEl.textContent = reel.title;
-    tagEl.textContent = `${reel.client} · ${reel.tag}`;
-    descEl.textContent = reel.desc;
-
-    const keys = Object.keys(reel.metrics);
-    metricVal1.textContent = reel.metrics[keys[0]] || reel.views;
-    metricLbl1.textContent = keys[0] || 'Views';
-    metricVal2.textContent = reel.metrics[keys[1]] || reel.likes;
-    metricLbl2.textContent = keys[1] || 'Likes';
-
-    const waText = encodeURIComponent(`Hi Digititup Media! I saw your reel for "${reel.client}" (${reel.title}). I would love to produce a similar high-retention vertical video for my brand!`);
-    orderBtn.href = `https://wa.me/9779812414094?text=${waText}`;
-
-    if (reel.youtubeId) {
-      videoBox.innerHTML = `
-        <iframe 
-          src="https://www.youtube.com/embed/${reel.youtubeId}?autoplay=1&rel=0&modestbranding=1&playsinline=1" 
-          title="${reel.title}" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-          allowfullscreen>
-        </iframe>
-      `;
-    } else {
-      videoBox.innerHTML = `
-        <div style="position:relative;width:100%;height:100%;overflow:hidden;background:#000;">
-          <img src="${reel.poster}" style="width:100%;height:100%;object-fit:cover;" alt="${reel.title}" />
-          <div style="position:absolute;inset:0;background:radial-gradient(circle at center, transparent 30%, rgba(0,0,0,0.8) 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;text-align:center;">
-            <div style="width:70px;height:70px;border-radius:50%;background:#21d800;color:#050a06;display:flex;align-items:center;justify-content:center;box-shadow:0 0 35px rgba(33,216,0,0.6);margin-bottom:16px;">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-            </div>
-            <div style="font-size:16px;font-weight:700;color:#fff;margin-bottom:6px;">${reel.client}</div>
-            <div style="font-size:13px;color:rgba(255,255,255,0.7);max-width:280px;line-height:1.4;">Official Short-Form Reel Campaign produced by Digititup Media</div>
-            <a href="${orderBtn.href}" target="_blank" class="btn btn-whatsapp btn-sm" style="margin-top:20px;">
-              <span>Order Similar Reel on WhatsApp</span>
-            </a>
-          </div>
-        </div>
-      `;
-    }
-
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeReelModal() {
-    modal.classList.remove('active');
-    document.body.style.overflow = '';
-    const videoBox = document.getElementById('modalVideoBox');
-    videoBox.innerHTML = '';
-  }
-
-  if (modalClose) modalClose.addEventListener('click', closeReelModal);
-  if (modal) {
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) closeReelModal();
-    });
-  }
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.classList.contains('active')) {
-      closeReelModal();
-    }
-  });
 }
 
-/* ================= PRICING TOGGLE (MONTHLY VS ANNUALLY 20% OFF) ================= */
-function initPricingToggle() {
-  const switchBtn = document.getElementById('pricingSwitch');
-  const labelMonthly = document.getElementById('lblMonthly');
-  const labelAnnually = document.getElementById('lblAnnually');
+/* ================= LONG-FORM YOUTUBE SHOWCASE ================= */
+function initLongformShowcase() {
+  const cards = document.querySelectorAll('.longform-card');
 
-  const starterPrice = document.getElementById('priceStarter');
-  const flowPrice = document.getElementById('priceFlow');
-  const starterPeriod = document.getElementById('periodStarter');
-  const flowPeriod = document.getElementById('periodFlow');
+  cards.forEach(card => {
+    const playBtn = card.querySelector('.longform-play-btn');
+    const triggerBtn = card.querySelector('.longform-trigger-btn');
+    const thumbWrap = card.querySelector('.longform-thumb-wrap');
+    const ytId = (playBtn && playBtn.dataset.ytId) || (triggerBtn && triggerBtn.dataset.ytId);
 
-  const starterDiscount = document.getElementById('discountStarter');
-  const flowDiscount = document.getElementById('discountFlow');
+    function triggerVideo(e) {
+      if (e) e.stopPropagation();
+      const data = LONGFORM_DATA[ytId];
+      if (!data) return;
 
-  const btnStarter = document.getElementById('btnStarter');
-  const btnFlow = document.getElementById('btnFlow');
-  const btnViral = document.getElementById('btnViral');
-
-  if (!switchBtn || !starterPrice || !flowPrice) return;
-
-  let isAnnually = false;
-
-  function updatePricing() {
-    if (isAnnually) {
-      switchBtn.classList.add('checked');
-      labelMonthly.classList.remove('active');
-      labelAnnually.classList.add('active');
-
-      // 20% OFF discounted rates
-      starterPrice.innerHTML = '<span style="text-decoration:line-through;color:var(--ink-muted);font-size:24px;margin-right:6px;">25,000</span>20,000';
-      flowPrice.innerHTML = '<span style="text-decoration:line-through;color:var(--ink-muted);font-size:24px;margin-right:6px;">50,000</span>40,000';
-
-      starterPeriod.textContent = '/ month (contracted)';
-      flowPeriod.textContent = '/ month (contracted)';
-
-      if (starterDiscount) {
-        starterDiscount.style.display = 'inline-block';
-        starterDiscount.textContent = '⚡ Save NPR 60,000/yr (20% OFF Contracted, Billed Monthly)';
-      }
-      if (flowDiscount) {
-        flowDiscount.style.display = 'inline-block';
-        flowDiscount.textContent = '⚡ Save NPR 1,20,000/yr (20% OFF Contracted, Billed Monthly)';
-      }
-
-      // Pre-filled WhatsApp URLs
-      if (btnStarter) {
-        const msg = encodeURIComponent('Hi Digititup Media! I would like to lock in the Starter Annual Contract (20% OFF - NPR 20,000/mo, billed monthly) for 1 short video/week. Please guide me through onboarding!');
-        btnStarter.href = `https://wa.me/9779812414094?text=${msg}`;
-      }
-      if (btnFlow) {
-        const msg = encodeURIComponent('Hi Digititup Media! I want to lock in the Flow Annual Contract (20% OFF - NPR 40,000/mo, billed monthly) for 2-3 short videos/week. Let\'s schedule onboarding!');
-        btnFlow.href = `https://wa.me/9779812414094?text=${msg}`;
-      }
-      if (btnViral) {
-        const msg = encodeURIComponent('Hi Digititup Media! We want to discuss an Annual Enterprise Retainer with the 20% contract discount for high-volume custom production & shoots.');
-        btnViral.href = `https://wa.me/9779812414094?text=${msg}`;
-      }
-
-    } else {
-      switchBtn.classList.remove('checked');
-      labelMonthly.classList.add('active');
-      labelAnnually.classList.remove('active');
-
-      // Regular Monthly rates
-      starterPrice.textContent = '25,000';
-      flowPrice.textContent = '50,000';
-
-      starterPeriod.textContent = '/ month';
-      flowPeriod.textContent = '/ month';
-
-      if (starterDiscount) starterDiscount.style.display = 'none';
-      if (flowDiscount) flowDiscount.style.display = 'none';
-
-      // Pre-filled WhatsApp URLs
-      if (btnStarter) {
-        const msg = encodeURIComponent('Hi Digititup Media! I would like to subscribe to the Starter Monthly Plan (NPR 25,000/mo) for 1 short video/week. Please guide me through onboarding.');
-        btnStarter.href = `https://wa.me/9779812414094?text=${msg}`;
-      }
-      if (btnFlow) {
-        const msg = encodeURIComponent('Hi Digititup Media! I want to get started with the Flow Monthly Plan (NPR 50,000/mo) for 2-3 short videos/week. Let\'s discuss our brand goals.');
-        btnFlow.href = `https://wa.me/9779812414094?text=${msg}`;
-      }
-      if (btnViral) {
-        const msg = encodeURIComponent('Hi Digititup Media! We need high-volume, custom viral reels production and on-location shoot direction. I\'d like to book a strategy meeting.');
-        btnViral.href = `https://wa.me/9779812414094?text=${msg}`;
-      }
-    }
-  }
-
-  switchBtn.addEventListener('click', () => {
-    isAnnually = !isAnnually;
-    updatePricing();
-  });
-
-  if (labelMonthly) labelMonthly.addEventListener('click', () => {
-    isAnnually = false;
-    updatePricing();
-  });
-
-  if (labelAnnually) labelAnnually.addEventListener('click', () => {
-    isAnnually = true;
-    updatePricing();
-  });
-
-  updatePricing();
-}
-
-/* ================= CONTACT FORM & WHATSAPP REDIRECT ================= */
-function initContactForm() {
-  const form = document.getElementById('orderForm');
-  const toast = document.getElementById('toastNotice');
-
-  if (!form) return;
-
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const name = document.getElementById('formName').value.trim();
-    const business = document.getElementById('formBusiness').value.trim();
-    const phone = document.getElementById('formPhone').value.trim();
-    const service = document.getElementById('formService').value;
-    const shootNeeded = document.getElementById('formShootOption') ? document.getElementById('formShootOption').value : 'No';
-    const message = document.getElementById('formMessage').value.trim();
-
-    if (!name || !phone || !service) {
-      showToast('⚠️ Please fill in all required fields (Name, Phone, Service).');
-      return;
+      openCinemaModal({
+        youtubeId: ytId,
+        title: data.title,
+        client: data.client,
+        tag: data.tag,
+        desc: data.desc,
+        metrics: data.metrics,
+        youtube: data.youtube,
+        facebook: data.facebook,
+        mode: 'mode-widescreen',
+        poster: ''
+      });
     }
 
-    const formattedText = 
-`🔥 *New Project Inquiry - Digititup Media*
-━━━━━━━━━━━━━━━━━━━━
-👤 *Name:* ${name}
-🏢 *Business / Brand:* ${business || 'N/A'}
-📱 *Contact No.:* ${phone}
-🎯 *Service Requested:* ${service}
-🎬 *On-Location Shoot Needed:* ${shootNeeded}
-💬 *Message & Goals:* ${message || 'Looking forward to working together.'}
-━━━━━━━━━━━━━━━━━━━━
-_Submitted via media.digititup.com_`;
-
-    const waUrl = `https://wa.me/9779812414094?text=${encodeURIComponent(formattedText)}`;
-
-    showToast('🚀 Redirecting to WhatsApp with your details filled...');
-
-    setTimeout(() => {
-      window.open(waUrl, '_blank');
-    }, 600);
-  });
-
-  function showToast(msg) {
-    if (!toast) return;
-    const textEl = toast.querySelector('.toast-text');
-    if (textEl) textEl.textContent = msg;
-    toast.classList.add('show');
-    setTimeout(() => {
-      toast.classList.remove('show');
-    }, 5000);
-  }
-}
-
-/* ================= FAQ ACCORDION ================= */
-function initFAQ() {
-  const faqItems = document.querySelectorAll('.faq-item');
-
-  faqItems.forEach(item => {
-    const question = item.querySelector('.faq-question');
-    question.addEventListener('click', () => {
-      const isActive = item.classList.contains('active');
-
-      faqItems.forEach(other => other.classList.remove('active'));
-
-      if (!isActive) {
-        item.classList.add('active');
-      }
-    });
+    if (playBtn) playBtn.addEventListener('click', triggerVideo);
+    if (triggerBtn) triggerBtn.addEventListener('click', triggerVideo);
+    if (thumbWrap) thumbWrap.addEventListener('click', triggerVideo);
   });
 }
 
@@ -620,7 +586,6 @@ function initInteractive3DHeroPhone() {
     stage.addEventListener('mousemove', (e) => {
       isHovering = true;
       const rect = stage.getBoundingClientRect();
-      // Normalize coordinates from -1 to 1
       mouseX = ((e.clientX - rect.left) / rect.width) * 2 - 1;
       mouseY = ((e.clientY - rect.top) / rect.height) * 2 - 1;
     });
@@ -638,15 +603,12 @@ function initInteractive3DHeroPhone() {
 
   // Smooth animation loop using lerp for ultra-satisfying inertia
   function render3D() {
-    // Idle gentle floating when not hovering
-    const targetX = isHovering ? mouseX : Math.sin(Date.now() * 0.0012) * 0.35;
-    const targetY = isHovering ? mouseY : Math.cos(Date.now() * 0.0015) * 0.25;
+    const lerpSpeed = 0.08;
+    currentX += (mouseX - currentX) * lerpSpeed;
+    currentY += (mouseY - currentY) * lerpSpeed;
 
-    currentX += (targetX - currentX) * 0.08;
-    currentY += (targetY - currentY) * 0.08;
-
-    const tiltX = -currentY * 18; // Max 18 deg tilt
-    const tiltY = currentX * 22;  // Max 22 deg tilt
+    const tiltX = -currentY * 16;
+    const tiltY = currentX * 18;
     const liftZ = isHovering ? 28 : 8;
 
     anchor.style.transform = `rotateX(${tiltX.toFixed(2)}deg) rotateY(${tiltY.toFixed(2)}deg) translateZ(${liftZ}px)`;
@@ -684,7 +646,7 @@ function initInteractive3DHeroPhone() {
       views: '🔥 1.2M Views',
       client: 'Mountain Dew Nepal',
       caption: 'Yamaha FZ-F1 Giveaway campaign featuring high-energy pacing and interactive QR scan integration.',
-      targetReelId: 'dew-yamaha'
+      targetReelId: 'yt-auto-show'
     },
     mg: {
       img: 'assets/images/card_mg_s5.png',
@@ -692,7 +654,7 @@ function initInteractive3DHeroPhone() {
       views: '🔥 540K Views',
       client: 'MG Motors Nepal',
       caption: 'High-impact TVC and vertical feature strategy for the MG S5 EV focused on luxury, sustainability, and urban dynamics.',
-      targetReelId: 'mg-s5-ev'
+      targetReelId: 'yt-yatri-p2'
     }
   };
 
@@ -725,15 +687,304 @@ function initInteractive3DHeroPhone() {
     });
   });
 
-  // Play button opens the corresponding reel in the modal
+  // Play button on hero phone triggers the cinema modal
   if (heroPlayBtn) {
     heroPlayBtn.addEventListener('click', (e) => {
       e.stopPropagation();
-      const targetId = STORIES[activeStory]?.targetReelId || 'dew-yamaha';
-      const reelCard = document.querySelector(`.reel-card[data-id="${targetId}"]`);
-      if (reelCard) {
-        reelCard.click();
+      const targetId = STORIES[activeStory]?.targetReelId || 'yt-focus-secret';
+      const reel = REELS_DATA.find(r => r.id === targetId) || REELS_DATA[0];
+      openCinemaModal({
+        youtubeId: reel.youtubeId,
+        title: reel.title,
+        client: reel.client,
+        tag: reel.tag,
+        desc: reel.desc,
+        metrics: reel.metrics,
+        youtube: reel.youtube,
+        facebook: reel.facebook,
+        mode: 'mode-vertical',
+        poster: reel.poster
+      });
+    });
+  }
+}
+
+/* ================= NAVBAR & MOBILE DRAWER ================= */
+function initNavbar() {
+  const header = document.querySelector('.site-header');
+  const burger = document.querySelector('.burger-btn');
+  const drawer = document.getElementById('mobileDrawer') || document.querySelector('.mobile-drawer');
+  const drawerClose = document.getElementById('mobileDrawerClose');
+  const drawerLinks = document.querySelectorAll(
+    '.mobile-minimal-menu a, .mobile-nav-item, .mobile-cta-btn, .m-social-btn, .mobile-drawer a'
+  );
+
+  // Glass header scroll transformation
+  window.addEventListener('scroll', () => {
+    if (header) {
+      if (window.scrollY > 40) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    }
+  });
+
+  // Mobile luxury drawer open / close
+  function openDrawer() {
+    if (!drawer) return;
+    if (burger) {
+      burger.classList.add('open');
+      burger.classList.add('active');
+    }
+    drawer.classList.add('open');
+    drawer.classList.add('active');
+    drawer.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeDrawer() {
+    if (!drawer) return;
+    if (burger) {
+      burger.classList.remove('open');
+      burger.classList.remove('active');
+    }
+    drawer.classList.remove('open');
+    drawer.classList.remove('active');
+    drawer.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  if (burger) {
+    burger.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const isOpen = drawer && (drawer.classList.contains('open') || drawer.classList.contains('active'));
+      if (isOpen) {
+        closeDrawer();
+      } else {
+        openDrawer();
       }
     });
   }
+
+  if (drawerClose) {
+    drawerClose.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      closeDrawer();
+    });
+  }
+
+  // Close drawer on link click
+  drawerLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      closeDrawer();
+    });
+  });
+
+  // Close drawer on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && drawer && (drawer.classList.contains('open') || drawer.classList.contains('active'))) {
+      closeDrawer();
+    }
+  });
+}
+
+/* ================= PRICING TOGGLE (MONTHLY VS ANNUALLY 20% OFF) ================= */
+function initPricingToggle() {
+  const switchBtn = document.getElementById('pricingSwitch');
+  const labelMonthly = document.getElementById('lblMonthly');
+  const labelAnnually = document.getElementById('lblAnnually');
+  const saveBadge = document.querySelector('.pricing-toggle-wrap .save-badge');
+
+  const priceStarter = document.getElementById('priceStarter');
+  const periodStarter = document.getElementById('periodStarter');
+  const discountStarter = document.getElementById('discountStarter');
+  const btnStarter = document.getElementById('btnStarter');
+
+  const priceFlow = document.getElementById('priceFlow');
+  const periodFlow = document.getElementById('periodFlow');
+  const discountFlow = document.getElementById('discountFlow');
+  const btnFlow = document.getElementById('btnFlow');
+
+  const btnViral = document.getElementById('btnViral');
+
+  if (!switchBtn) return;
+
+  let isAnnual = false;
+
+  function updatePricing() {
+    if (isAnnual) {
+      switchBtn.classList.add('checked');
+      if (labelAnnually) labelAnnually.classList.add('active');
+      if (labelMonthly) labelMonthly.classList.remove('active');
+
+      // Starter Plan: 25,000 -> 20,000 (-20%)
+      if (priceStarter) priceStarter.textContent = '20,000';
+      if (periodStarter) periodStarter.textContent = '/ month (billed monthly)';
+      if (discountStarter) {
+        discountStarter.textContent = '⚡ Save NPR 5,000/mo (NPR 60,000/year)';
+        discountStarter.style.display = 'inline-block';
+      }
+      if (btnStarter) {
+        btnStarter.href = `https://wa.me/9779812414094?text=${encodeURIComponent("Hi Digititup Media! I want to lock the Starter Plan with Annual 20% Discount (NPR 20,000/month - 4 reels/month). Let's discuss!")}`;
+      }
+
+      // Flow Plan: 50,000 -> 40,000 (-20%)
+      if (priceFlow) priceFlow.textContent = '40,000';
+      if (periodFlow) periodFlow.textContent = '/ month (billed monthly)';
+      if (discountFlow) {
+        discountFlow.textContent = '⚡ Save NPR 10,000/mo (NPR 1,20,000/year)';
+        discountFlow.style.display = 'inline-block';
+      }
+      if (btnFlow) {
+        btnFlow.href = `https://wa.me/9779812414094?text=${encodeURIComponent("Hi Digititup Media! I want to lock the Flow Plan with Annual 20% Discount (NPR 40,000/month - 10-12 reels/month). Let's discuss!")}`;
+      }
+
+      if (btnViral) {
+        btnViral.href = `https://wa.me/9779812414094?text=${encodeURIComponent("Hi Digititup Media! I want to discuss an Annual Custom Viral Plan for enterprise video production.")}`;
+      }
+    } else {
+      switchBtn.classList.remove('checked');
+      if (labelMonthly) labelMonthly.classList.add('active');
+      if (labelAnnually) labelAnnually.classList.remove('active');
+
+      // Starter Plan: 25,000
+      if (priceStarter) priceStarter.textContent = '25,000';
+      if (periodStarter) periodStarter.textContent = '/ month';
+      if (discountStarter) {
+        discountStarter.textContent = '';
+        discountStarter.style.display = 'none';
+      }
+      if (btnStarter) {
+        btnStarter.href = `https://wa.me/9779812414094?text=${encodeURIComponent("Hi Digititup Media! I want to get started with the Starter Plan (NPR 25,000/month - 4 reels/month). Let's discuss!")}`;
+      }
+
+      // Flow Plan: 50,000
+      if (priceFlow) priceFlow.textContent = '50,000';
+      if (periodFlow) periodFlow.textContent = '/ month';
+      if (discountFlow) {
+        discountFlow.textContent = '';
+        discountFlow.style.display = 'none';
+      }
+      if (btnFlow) {
+        btnFlow.href = `https://wa.me/9779812414094?text=${encodeURIComponent("Hi Digititup Media! I want to get started with the Flow Plan (NPR 50,000/month - 10-12 reels/month). Let's discuss!")}`;
+      }
+
+      if (btnViral) {
+        btnViral.href = `https://wa.me/9779812414094?text=${encodeURIComponent("Hi Digititup Media! I want to discuss a Custom Viral Plan for enterprise video production.")}`;
+      }
+    }
+  }
+
+  // Click on the switch slider
+  switchBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    isAnnual = !isAnnual;
+    updatePricing();
+  });
+
+  // Click on "Pay Monthly" label
+  if (labelMonthly) {
+    labelMonthly.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (isAnnual) {
+        isAnnual = false;
+        updatePricing();
+      }
+    });
+  }
+
+  // Click on "Contracted Annually" label
+  if (labelAnnually) {
+    labelAnnually.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (!isAnnual) {
+        isAnnual = true;
+        updatePricing();
+      }
+    });
+  }
+
+  // Click on "20% OFF" badge
+  if (saveBadge) {
+    saveBadge.style.cursor = 'pointer';
+    saveBadge.addEventListener('click', (e) => {
+      e.preventDefault();
+      isAnnual = true;
+      updatePricing();
+    });
+  }
+
+  // Keyboard accessibility (Space / Enter)
+  switchBtn.setAttribute('tabindex', '0');
+  switchBtn.addEventListener('keydown', (e) => {
+    if (e.key === ' ' || e.key === 'Enter') {
+      e.preventDefault();
+      isAnnual = !isAnnual;
+      updatePricing();
+    }
+  });
+
+  // Initialize correct prices and WhatsApp links on page load
+  updatePricing();
+}
+
+/* ================= CONTACT FORM ================= */
+function initContactForm() {
+  const form = document.getElementById('contactForm');
+  const toast = document.getElementById('toastNotice');
+
+  if (!form) return;
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById('cName')?.value || 'Client';
+    const brand = document.getElementById('cBrand')?.value || 'Brand';
+    const service = document.getElementById('cService')?.value || 'Vertical Video Production';
+    const shoot = document.getElementById('cShoot')?.value || 'Not sure';
+    const msg = document.getElementById('cMsg')?.value || '';
+
+    const text = encodeURIComponent(
+      `Hello Digititup Media!\n\n` +
+      `*Name:* ${name}\n` +
+      `*Brand / Handle:* ${brand}\n` +
+      `*Service Required:* ${service}\n` +
+      `*On-Location Shoot:* ${shoot}\n` +
+      `*Project Details:* ${msg}\n\n` +
+      `I want to book a free 30-minute creative strategy call.`
+    );
+
+    const waUrl = `https://wa.me/9779812414094?text=${text}`;
+
+    if (toast) {
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+        window.open(waUrl, '_blank');
+      }, 1200);
+    } else {
+      window.open(waUrl, '_blank');
+    }
+  });
+}
+
+/* ================= FAQ ACCORDION ================= */
+function initFAQ() {
+  const faqQuestions = document.querySelectorAll('.faq-question');
+
+  faqQuestions.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const isActive = item.classList.contains('active');
+
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+
+      if (!isActive) {
+        item.classList.add('active');
+      }
+    });
+  });
 }
